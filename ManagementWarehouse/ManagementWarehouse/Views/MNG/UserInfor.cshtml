@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- toastr -->
+<script src="/Content/plugins/Toastrjs/toastr.min.js"></script>
+<link rel="stylesheet" href="/Content/plugins/Toastrjs/toastr.min.css" />
+
+<script src="/crm_manager/Js/UserInfor.js"></script>
+
+<div class="row">
+    <div class="col-md-6 col-xs-12">
+        <div class="box box-success">
+            <div class="box-header ui-sortable-handle" style="cursor: move;">
+                <i class="fa fa-info-circle"></i>
+                <h3 class="box-title">Thông tin tài khoản</h3>
+                <div class="row form-horizontal">
+                    <div class="col-sm-10">
+                        <div class="form-group">
+                            <label for="txtFullname" class="col-sm-3 control-label">Họ tên</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="txtFullname" placeholder="Họ tên">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtEmail" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPhone" class="col-sm-3 control-label">Số điện thoại</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="txtPhone" placeholder="Số điện thoại">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lbRoles" class="col-sm-3 control-label">Quyền</label>
+                            <div class="col-sm-9 control-label" style="text-align:left">
+                                <label id="lbRoles" class="badge bg-green"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-10">
+                                <button id="btnReceive" class="btn btn-success btn-flat" type="button">
+                                    <i class="fa fa-play-circle-o fa-lg"></i>&nbsp; Lưu thông tin
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <i class="fa fa-lock"></i>
+                <h3 class="box-title">Thay đổi mật khẩu</h3>
+                <div class="row form-horizontal">
+                    <div class="col-sm-10">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Mật khẩu cũ</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="txtOldPass" placeholder="Mật khẩu cũ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtFullname" class="col-sm-4 control-label">Mật khẩu mới</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="txtNewPass" placeholder="Bao gồm 8 ký tự: số, chữ hoa, chữ thường, ký tự đặc biệt">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Nhập lại mật khẩu mới</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="txtReNewPass" placeholder="Nhập lại mật khẩu mới">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <button id="btnChange" class="btn btn-warning btn-flat" type="button">
+                                    <i class="fa fa-play-circle-o fa-lg"></i>&nbsp; Đổi mật khẩu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

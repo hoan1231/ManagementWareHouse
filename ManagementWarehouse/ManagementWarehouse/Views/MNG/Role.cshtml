@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="/crm_manager/CSS/Role.css" rel="stylesheet" />
+<link rel="stylesheet" href="/Content/dist/checkstyle/build.css">
+<script src="/Content/plugins/datatables/dataTables.select.min.js"></script>
+<script src="/Content/plugins/jQueryEditTable/jquery.editable-1.3.3.js"></script>
+<script src="/crm_manager/Js/Role.js"></script>
+
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#manager" data-toggle="tab">
+                <code><i class="fa fa-bank text-red"></i>&nbsp;Quyền hệ thống</code>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="active tab-pane" id="manager">
+            <div class="row">
+                <div class="col-md-4 col-xs-6 col-lg-4">
+                    <div class="form-group">
+                        <label>
+                            Tên quyền
+                        </label>
+                        <div class="input-group">
+                            <input id="txtSysRoleName" placeholder="Nhập tên quyền" class="form-control input-sm" />
+                            <div class="input-group-btn">
+                                <button type="button" id="btnSysAddRole" class="btn btn-default btn-sm"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Thêm mới</button>
+                            </div>
+                        </div>
+                        <code class="lbSysAddHelper text-green" style="display:none"></code>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-12 col-lg-6">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <i class="ion ion-clipboard"></i>
+                            <h3 class="box-title">Danh sách quyền</h3>
+                            <table id="tblSysRole" class="table table-hover">
+                                <thead>
+                                    <tr class="success">
+                                        <th width="40">STT</th>
+                                        <th width="50%">Tên quyền</th>
+                                        <th width="40px">Số lượng</th>
+                                        <th width="40px">Công cụ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbdSysRole"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 col-lg-6">
+                    <div class="box box-danger sys-box-setup-role" style="display:none">
+                        <div class="box-header with-border">
+                            <i class="ion ion-clipboard"></i>
+                            <h3 class="box-title">Thiết lập quyền:&nbsp;<code class="SysroleName" style="display:none"></code></h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nhóm module</label>
+                                        <div class="input-group">
+                                            <select ID="ddlSysModules" class="form-control input-sm select2" style="width:100%">
+                                                <option value="">-Chọn-</option>
+                                            </select>
+                                            <div class="input-group-btn">
+                                                <button type="button" id="btnSysUpdate" class="btn btn-default btn-sm"><i class="fa fa-toggle-right fa-lg"></i>&nbsp;Cập nhật</button>
+                                            </div>
+                                        </div>
+                                        <code class="lbSysUpdateHelper text-green" style="display:none"></code>
+                                    </div>
+                                </div>
+                            </div>
+                            <table id="tblSysMenu" class="table table-hover">
+                                <thead>
+                                    <tr class="success">
+                                        <th style="display:none">
+                                            MenuID
+                                        </th>
+                                        <th style="display:none">
+                                            RoleMenuID
+                                        </th>
+                                        <th>
+                                            Chức năng
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbdSysMenu"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-danger sys-box-view-user-in-role" style="display:none">
+                        <div class="box-header with-border">
+                            <i class="ion ion-clipboard"></i>
+                            <h3 class="box-title">User thuộc quyền:&nbsp;<code class="SysroleName" style="display:none"></code></h3>
+                        </div>
+                        <div class="box-body">
+                            <table id="tblSysUserInRole">
+                                <thead>
+                                    <tr class="success">
+                                        <th>#</th>
+                                        <th>User</th>
+                                        <th>Họ tên</th>
+                                        <th>Danh số</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbdSysUserInRole"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

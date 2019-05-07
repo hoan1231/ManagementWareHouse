@@ -1,0 +1,261 @@
+﻿
+@{
+    ViewBag.Title = "Sales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="/Content/plugins/jQueryUrl/jquery.url.js" type="text/javascript"></script>
+<script src="/Content/plugins/Toastrjs/toastr.min.js"></script>
+<link rel="stylesheet" href="/Content/plugins/Toastrjs/toastr.min.css" />
+<script src="/Content/plugins/datatables/dataTables.select.min.js"></script>
+<script src="/Content/plugins/jQueryEditTable/jquery.editable-1.3.3.js"></script>
+<script src="~/crm_ware/Js/Sales.js"></script>
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Tạo đơn bán hàng</h3>
+    </div>
+    <div class="box-body">
+
+        <div class="box">
+            <div class="box-header">
+                <h2 class="blue"><i class="fa-fw fa fa-plus"></i>Thêm đơn hàng</h2>
+            </div>
+            <div class="box-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="introtext">Vui lòng điền vào các thông tin dưới đây. Các mục đánh dấu * là các mục bắt buộc phải nhập vào.</p>  
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-md-3 col-xs-6 col-lg-2">
+                                        <div class="form-group">
+                                            <label>Ngày</label>
+                                            <input type="text" placeholder="Chọn ngày" id="txtDate" class="form-control input-sm datepicker" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-xs-6 col-lg-2">
+                                        <div class="form-group">
+                                            <label>Số tham chiếu</label>
+                                            <input type="text" placeholder="Nhập số tham chiếu" id="txtNumber" class="form-control input-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-xs-6 col-lg-2">
+                                        <div class="form-group">
+                                            <label>Người bán hàng</label>
+                                            <select id="ddlAgentSales" class="form-control input-sm select2" style="width:100%">
+                                                <option value="">-Chọn-</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-12">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">Vui lòng chọn các mục này trước khi thêm sản phẩm bất kỳ</div>
+                                            <div class="panel-body" style="padding: 5px;">
+                                                <div class="col-md-3 col-xs-6 col-lg-2">
+                                                    <div class="form-group">
+                                                        <label>Kho hàng(*)</label>
+                                                        <select id="ddlWare" class="form-control input-sm select2" style="width:100%">
+                                                            <option value="">-Chọn-</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-xs-6 col-lg-2">
+                                                    <div class="form-group">
+                                                        <label>Khách hàng</label>
+                                                        <select id="ddlCustomer" class="form-control input-sm select2" style="width:100%">
+                                                            <option value="">-Chọn-</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12" id="sticker" style="width: 1027px; z-index: 2; top: 0px;">
+                                        <div class="well well-sm">
+                                            <div class="form-group" style="margin-bottom:0;">
+                                                <div class="input-group wide-tip">
+                                                    <div class="input-group-addon" style="padding-left: 10px; padding-right: 10px;">
+                                                        <i class="fa fa-barcode addIcon fa-2x"></i>
+                                                    </div>
+                                                    <input type="text" name="add_item" value="" class="form-control ui-autocomplete-input input-lg" id="add_item" placeholder="Hãy thêm sản phẩm vào danh sách đặt hàng" autocomplete="off">
+                                                    <div class="input-group-addon" style="padding-left: 10px; padding-right: 10px;">
+                                                        <a href="#" id="addManually" class="tip" title="" data-original-title="Thêm sản phẩm thủ công" tabindex="-1">
+                                                            <i class="fa fa-plus-circle addIcon fa-2x" id="addIcon"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="input-group-addon" style="padding-left: 10px; padding-right: 10px;">
+                                                        <a href="#" id="sellGiftCard" class="tip" title="" data-original-title="Sell Gift Card" tabindex="-1">
+                                                            <i class="fa fa-credit-card addIcon fa-2x" id="addIcon"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="control-group table-group">
+                                            <label class="table-label">Order Items *</label>
+
+                                            <div class="controls table-controls">
+                                                <table id="slTable" class="table items table-striped table-bordered table-condensed table-hover sortable_table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-md-4">Sản phẩm (Mã - Tên)</th>
+                                                            <th class="col-md-2">Số Serial</th>
+                                                            <th class="col-md-1">Đơn vị giá bán</th>
+                                                            <th class="col-md-1">Số lượng</th>
+                                                            <th class="col-md-1">Chiết khấu</th>
+                                                            <th class="col-md-1">Thuế sản phẩm</th>
+                                                            <th>
+                                                                Thành tiền(<span class="currency">USD</span>)
+                                                            </th>
+                                                            <th style="width: 30px !important; text-align: center;">
+                                                                <i class="fa fa-trash-o" style="opacity:0.5; filter:alpha(opacity=50);"></i>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="ui-sortable"></tbody>
+                                                    <tfoot></tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div id="payments" style="display: none;">
+                                        <div class="col-md-12">
+                                            <div class="well well-sm well_1">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="payment_reference_no">Số tham chiếu thanh toán</label>                                                    <input type="text" name="payment_reference_no" value="" class="form-control tip" id="payment_reference_no" data-original-title="" title="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="payment">
+                                                                <div class="form-group ngc">
+                                                                    <label for="amount_1">Số lượng</label>                                                        <input name="amount-paid" type="text" id="amount_1" class="pa form-control kb-pad amount">
+                                                                </div>
+                                                                <div class="form-group gc" style="display: none;">
+                                                                    <label for="gift_card_no">Mã số thẻ giảm giá</label>                                                        <input name="gift_card_no" type="text" id="gift_card_no" class="pa form-control kb-pad">
+
+                                                                    <div id="gc_details"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                                <label for="paid_by_1">Thanh toán bằng</label>                                                    <div class="select2-container form-control paid_by" id="s2id_paid_by_1"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-7">Tiền mặt</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen7" class="select2-offscreen">Thanh toán bằng</label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-7" id="s2id_autogen7"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen7_search" class="select2-offscreen">Thanh toán bằng</label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-7" id="s2id_autogen7_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-7">   </ul></div></div><select name="paid_by" id="paid_by_1" class="form-control paid_by" tabindex="-1" title="Thanh toán bằng" style="display: none;">
+
+                                                                    <option value="cash">Tiền mặt</option>
+                                                                    <option value="gift_card">Thẻ giảm giá</option>
+                                                                    <option value="CC">Thẻ tín dụng</option>
+                                                                    <option value="Cheque">Séc</option>
+                                                                    <option value="other">Khách</option>
+                                                                    <option value="deposit">deposit</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="pcc_1" style="display:none;">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <input name="pcc_no" type="text" id="pcc_no_1" class="form-control" placeholder="Số thẻ tín dụng">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <input name="pcc_holder" type="text" id="pcc_holder_1" class="form-control" placeholder="Tên chủ thẻ">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <div class="select2-container form-control pcc_type" id="s2id_pcc_type_1"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-8">Visa</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen8" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-8" id="s2id_autogen8"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen8_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-8" id="s2id_autogen8_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-8">   </ul></div></div><select name="pcc_type" id="pcc_type_1" class="form-control pcc_type" placeholder="Loại thẻ" tabindex="-1" title="" style="display: none;">
+                                                                        <option value="Visa">Visa</option>
+                                                                        <option value="MasterCard">MasterCard</option>
+                                                                        <option value="Amex">Amex</option>
+                                                                        <option value="Discover">Discover</option>
+                                                                    </select>
+                                                                    <!-- <input type="text" id="pcc_type_1" class="form-control" placeholder="Loại thẻ" />-->
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <input name="pcc_month" type="text" id="pcc_month_1" class="form-control" placeholder="Tháng">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+
+                                                                    <input name="pcc_year" type="text" id="pcc_year_1" class="form-control" placeholder="Năm">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+
+                                                                    <input name="pcc_ccv" type="text" id="pcc_cvv2_1" class="form-control" placeholder="CVV2">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pcheque_1" style="display:none;">
+                                                        <div class="form-group">
+                                                            <label for="cheque_no_1">Số séc</label>                                                <input name="cheque_no" type="text" id="cheque_no_1" class="form-control cheque_no">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="payment_note_1">Ghi chú thanh toán</label>                                            <div class="redactor_box"><ul class="redactor_toolbar" id="redactor_toolbar_3"><div class="redactor_dropdown redactor_dropdown_box_formatting" style="display: none;"><a href="#" class=" redactor_dropdown_p" tabindex="-1">Normal text</a><a href="#" class="redactor_format_pre redactor_dropdown_pre" tabindex="-1">Code</a><a href="#" class="redactor_format_h3 redactor_dropdown_h3" tabindex="-1">Header 3</a><a href="#" class="redactor_format_h4 redactor_dropdown_h4" tabindex="-1">Header 4</a></div><li><a href="javascript:;" title="Formatting" tabindex="-1" class="redactor_btn redactor_btn_formatting"></a></li><li class="redactor_separator"></li><li><a href="javascript:;" title="Align text to the left" tabindex="-1" class="redactor_btn redactor_btn_alignleft"></a></li><li><a href="javascript:;" title="Center text" tabindex="-1" class="redactor_btn redactor_btn_aligncenter"></a></li><li><a href="javascript:;" title="Align text to the right" tabindex="-1" class="redactor_btn redactor_btn_alignright"></a></li><li><a href="javascript:;" title="Justify text" tabindex="-1" class="redactor_btn redactor_btn_justify"></a></li><li class="redactor_separator"></li><li><a href="javascript:;" title="Bold" tabindex="-1" class="redactor_btn redactor_btn_bold"></a></li><li><a href="javascript:;" title="Italic" tabindex="-1" class="redactor_btn redactor_btn_italic"></a></li><li><a href="javascript:;" title="Underline" tabindex="-1" class="redactor_btn redactor_btn_underline"></a></li><li class="redactor_separator"></li><li><a href="javascript:;" title="• Unordered List" tabindex="-1" class="redactor_btn redactor_btn_unorderedlist"></a></li><li><a href="javascript:;" title="1. Ordered List" tabindex="-1" class="redactor_btn redactor_btn_orderedlist"></a></li><li class="redactor_separator"></li><div class="redactor_dropdown redactor_dropdown_box_link" style="display: none;"><a href="#" class=" redactor_dropdown_link" tabindex="-1">Insert link</a><a href="#" class=" redactor_dropdown_unlink" tabindex="-1">Unlink</a></div><li><a href="javascript:;" title="Link" tabindex="-1" class="redactor_btn redactor_btn_link"></a></li><li class="redactor_separator"></li><li><a href="javascript:;" title="HTML" tabindex="-1" class="redactor_btn redactor_btn_html"></a></li></ul><div class="redactor_pa redactor_form-control redactor_kb-text redactor_payment_note redactor_editor" contenteditable="true" dir="ltr" style="min-height: 100px;"><p>thanh toán xong</p></div><textarea name="payment_note" id="payment_note_1" class="pa form-control kb-text payment_note" dir="ltr" style="display: none;"></textarea></div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" name="total_items" value="" id="total_items" required="required" data-bv-field="total_items">
+
+                              
+                                    <div class="col-md-12">
+                                        <div class="fprom-group">
+                                            <input type="submit" name="add_sale" value="Gửi" id="add_sale" class="btn btn-primary" style="padding: 6px 15px; margin:15px 0;" disabled="disabled">
+                                            <button type="button" class="btn btn-danger" id="reset" tabindex="-1">Làm lại</button>
+                                        </div>
+                                    </div>
+                                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="total_items" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter/select a value</small>
+                                </div>
+                            </div>
+                            <div id="bottom-total" class="well well-sm" style="margin-bottom: 0px; position: fixed; bottom: 0px; width: 1027px; z-index: 2;">
+                                <table class="table table-bordered table-condensed totals" style="margin-bottom:0;">
+                                    <tbody>
+                                        <tr class="warning">
+                                            <td>Mục <span class="totals_val pull-right" id="titems">0</span></td>
+                                            <td>Tổng <span class="totals_val pull-right" id="total">0.00</span></td>
+                                            <td>Chiết khấu đơn hàng <span class="totals_val pull-right" id="tds">0.00</span></td>
+                                            <td>Thuế mua hàng <span class="totals_val pull-right" id="ttax2">0.00</span></td>
+                                            <td>Phí vận chuyển <span class="totals_val pull-right" id="tship">0.00</span></td>
+                                            <td>Tổng cộng <span class="totals_val pull-right" id="gtotal">0.00</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

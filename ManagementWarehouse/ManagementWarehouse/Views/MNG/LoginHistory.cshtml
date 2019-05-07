@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var fromDate = ViewData["fromDate"];
+    var toDate = ViewData["toDate"];
+}
+<script src="/Content/plugins/Toastrjs/toastr.min.js"></script>
+<link rel="stylesheet" href="/Content/plugins/Toastrjs/toastr.min.css" />
+
+<script src="/crm_manager/Js/LoginHistory.js"></script>
+<div class="box box-warning">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Lịch sử đăng nhập</h3>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-lg-2 col-sm-6">
+                <div class="form-group">
+                    <label>Từ ngày</label>
+                    <input type="text" id="txtFromDate" value="@fromDate" class="form-control input-datepicker input-sm" />
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 col-lg-2 col-sm-6">
+                <div class="form-group">
+                    <label>Đến ngày</label>
+                    <input type="text" id="txtToDate" value="@toDate" class="form-control input-datepicker input-sm" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button type="button" id="btnSearch" class="btn btn-success btn-sm">Tìm kiếm</button>
+                    <button type="button" id="btnExport" class="btn btn-success btn-sm">Xuất báo cáo</button>
+                </div>
+            </div>
+        </div>
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <i class="ion ion-clipboard"></i>
+                <h3 class="box-title">Kết quả tìm kiếm</h3>
+                <table>
+                    <thead class="table table-bordered table-hover">
+                        <tr class="success">
+                            <th width="5%">
+                                STT
+                            </th>
+                            <th>
+                                Tên đăng nhập
+                            </th>
+                            <th>
+                                Ngày giờ đăng nhập
+                            </th>
+                            <th>
+                                Trạng thái
+                            </th>
+                            <th>
+                                IP
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdHis"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

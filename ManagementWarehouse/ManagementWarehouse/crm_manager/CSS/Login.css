@@ -1,0 +1,17 @@
+﻿.login td {
+    padding: 2px 0;
+}
+
+.login .lbl {
+    padding-right: 4px;
+}
+
+.login-logo-w {
+    margin-bottom: 10px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+.login-panel {
+    margin: 0 auto;
+}

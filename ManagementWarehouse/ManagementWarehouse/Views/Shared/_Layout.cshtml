@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#317EFB" />
+    <title>ManagementWarehouse</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Content/dist/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/Content/dist/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="/Content/plugins/select2/select2.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="/Content/plugins/iCheck/all.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Content/dist/css/AdminLTE.min.css">
+    <!-- Pace style -->
+    <link rel="stylesheet" href="/Content/plugins/pace/pace.min.css">
+
+    @*<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">*@
+    <link rel="stylesheet" href="/Content/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/Content/plugins/jQuery/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/dist/css/jquery.datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/dist/css/MPCSSTemplate.css" />
+    <!-- Confirm -->
+    <link href="/Content/plugins/jqueryconfirm/jquery-confirm.min.css" rel="stylesheet" />
+
+    <!-- jQuery 2.2.3 -->
+    <script type='text/javascript' src="/Content/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type='text/javascript' src="/Content/plugins/jQuery/jquery-ui.min.js"></script>
+    <!-- Select2 -->
+    <script type='text/javascript' src="/Content/plugins/select2/select2.full.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script type='text/javascript' src="/Content/plugins/iCheck/icheck.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script type='text/javascript' src="/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="/Content/dist/js/jquery.datetimepicker.full.js"></script>
+    <script type='text/javascript' src="/Content/dist/js/datepicker-vi.js"></script>
+    <!-- dataTables -->
+    <link href="/Content/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Content/plugins/datatables/jquery.dataTables.js"></script>
+    <!-- Confirm -->
+    <script type='text/javascript' src="/Content/plugins/jqueryconfirm/jquery-confirm.min.js"></script>
+    <!-- PACE -->
+    <script src="/Content/plugins/pace/pace.min.js"></script>
+
+
+    <script type='text/javascript' src="/Content/dist/js/cims.convertDateHelper.js"></script>
+
+    <!-- FastClick -->
+    <script type='text/javascript' src="/Content/plugins/fastclick/fastclick.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script type='text/javascript' src="/Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script type='text/javascript' src="/Content/dist/js/app.min.js"></script>
+    <script type='text/javascript' src="/Content/dist/js/demo.js"></script>
+    <script type='text/javascript' src="/Content/dist/js/MasterPage.js"></script>
+    <!-- Kết nối Signarl -->
+    <script type='text/javascript' src="/Scripts/jquery.signalR-2.4.0.min.js"></script>
+    <script type='text/javascript' src="/signalr/hubs"></script>
+
+    <script type='text/javascript' src="/Content/dist/js/jquery.connect.hub.js"></script>
+</head>
+<body class="sidebar-mini fixed skin-blue">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="/VOC/Create" class="logo">
+                <span class="logo-mini">
+                    <b>ManagementWarehouse</b>
+                </span>
+                <span class="logo-lg"><b>CRM</b>&nbsp;ManagementWarehouse</span>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-globe"></i>
+                                <span class="label label-warning notify-ringing-number">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header notify-ringing-number-member"></li>
+                                <li>
+                                    <ul class="menu" id="ul-notify-ticket"></ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bolt"></i>
+                                <span class="label label-danger notify-deadline-number">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header notify-deadline-number-member"></li>
+                                <li>
+                                    <ul class="menu" id="ul-deadline-ticket"></ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success label-warning notify-service-number">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header notify-service-number-member"></li>
+                                <li>
+                                    <ul class="menu" id="ul-notify-service"></ul>
+                                </li>
+                                <li class="footer"><a href="#">Xem tất cả</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/Content/dist/img/1498552373_user.png" class="user-image" alt="User Image">
+                                <span class="hidden-xs"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="/Content/dist/img/1498552373_user.png" class="img-circle" alt="User Image">
+                                    <p class="name">
+                                    </p>
+                                    <p class="department"><small></small></p>
+
+                                </li>
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="/MNG/UserInfor" class="btn btn-default btn-flat">Thông tin cá nhân</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-default btn-flat" onclick="logOutMaster();">Đăng xuất</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="/Content/dist/img/1498552373_user.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p></p>
+                        <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+                    </div>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="header">DANH SÁCH CHỨC NĂNG</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-alt"></i>
+                            <span>Sản phẩm</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                <small class="label pull-right bg-green">7</small>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu menu-item" id="330951bd-46f3-4556-93a0-8355b4e3dd29"></ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-alt"></i>
+                            <span>Nhập hàng</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                <small class="label pull-right bg-blue">7</small>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu menu-item" id="56304651-6f9d-4628-ad46-1a116dfd16ee"></ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-alt"></i>
+                            <span>Chuyển kho</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                <small class="label pull-right bg-blue">7</small>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu menu-item" id="a3e7d7ee-cd4c-4789-91f0-da22e36c8303"></ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-alt"></i>
+                            <span>Báo cáo</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                <small class="label pull-right bg-green">7</small>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu menu-item" id="c0a6f766-5b3d-4dbf-bc99-3e08b69fa8d7"></ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-wrench"></i>
+                            <span>Management</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                                <small class="label pull-right bg-blue">7</small>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu menu-item" id="bb665949-df9b-4133-83f7-6cb824daf90e"></ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    <small>Preview</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+                    <li><a href="#">Forms</a></li>
+                </ol>
+            </section>
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version 3.1.0</b>
+            </div>
+            <strong>Copyright &copy; 2019 <a href="https://mptelecom.com.vn/">MP Telecom</a>.</strong> All rights reserved.
+        </footer>
+        <aside class="control-sidebar control-sidebar-dark">
+            <div class="tab-content">
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- toastr -->
+<script src="/Content/plugins/Toastrjs/toastr.min.js"></script>
+<link rel="stylesheet" href="/Content/plugins/Toastrjs/toastr.min.css" />
+<script src="/Content/plugins/jQueryUrl/jquery.url.js" type="text/javascript"></script>
+<link href="/crm_manager/CSS/Menu.css" rel="stylesheet" />
+<script src="/crm_manager/js/jquery.mptelecom.js"></script>
+<script src="/crm_manager/Js/Menu.js"></script>
+<link rel="stylesheet" href="/Content/dist/checkstyle/build.css" />
+
+
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#manager" data-toggle="tab">
+                <code><i class="fa fa-bank text-red"></i>&nbsp; Menu hệ thống</code>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="chart tab-pane active" id="manager">
+            <div class="row">
+                <div class="col-md-3 col-xs-6 col-lg-2">
+                    <div class="form-group">
+                        <label>Nhóm menu</label>
+                        <select id="ddlSysMenu" class="form-control input-sm select2" style="width:100%">
+                            <option value="">-Chọn-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 col-lg-2">
+                    <div class="form-group">
+                        <label>Tên menu</label>
+                        <input type="text" placeholder="Nhập tên menu" id="txtSysMenuName" class="form-control input-sm" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 col-lg-2">
+                    <div class="form-group">
+                        <label>Menu url</label>
+                        <input type="text" placeholder="Nhập url" id="txtSysMenuUrl" class="form-control input-sm" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-xs-6 col-lg-2">
+                    <div class="form-group">
+                        <label>Ghi chú</label>
+                        <input type="text" placeholder="Nhập ghi chú" id="txtNote" class="form-control input-sm" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 col-lg-2">
+                    <div class="form-group">
+                        <label>Vị trí</label>
+                        <input type="text" id="txtSysIndex" placeholder="Nhập vị trí" class="form-control input-sm" onkeypress="return isNumberKey(event)" />
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 col-lg-2">
+                    <div class="form-group">
+                        <span class="checkbox checkbox-success styleCheckBoxMenu">
+                            <input id="chkSysEnable" class="styled" type="checkbox">
+                            <label for="chkSysEnable">Hoạt động</label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button type="button" id="btnSysUpdate" class="btn btn-flat btn-primary btn-sm" style="display:none" onclick="SysUpdate()">
+                            <i class="fa fa-edit fa-lg"></i>&nbsp;Cập nhật
+                        </button>
+                        <button type="button" id="btnSysAdd" class="btn btn-primary btn-flat btn-sm" onclick="SysInsert()">
+                            <i class="fa fa-plus-circle fa-lg"></i>&nbsp;Thêm mới
+                        </button>
+                        <input type="button" id="btnSysCancel" class="btn btn-warning btn-flat btn-sm" value="Hủy" onclick="SysResetAll()" />
+                        <input type="hidden" id="hidSysMenuID" />
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header with-border">
+                    <i class="ion ion-clipboard"></i>
+                    <h3 class="box-title">Danh sách menu</h3>
+                    <table id="tblSysMenu" class="table table-bordered table-hover">
+                        <thead class="scroll-table">
+                            <tr class="success">
+                                <th>STT</th>
+                                <th>Tên menu</th>
+                                <th>Url</th>
+                                <th>Vị trí</th>
+                                <th>Nhóm menu</th>
+                                <th>Trạng thái</th>
+                                <th>Công cụ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbdSysMenu"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

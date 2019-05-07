@@ -1,0 +1,139 @@
+﻿.selects {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-image: url(../images/input_shadow.png);
+    background-repeat: no-repeat;
+    border-color: #BFBFBF #DEDEDE #DEDEDE #BFBFBF;
+    border-style: solid;
+    border-width: 1px;
+    font: 1em Arial,Helvetica,Verdana,sans-serif;
+    padding: 2px 1px;
+    width: 190px;
+}
+
+
+.selected {
+    background: #b4cde4 !important;
+    color: inherit;
+    outline: 0 none;
+    text-shadow: none;
+}
+
+table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after {
+    content: '\2714';
+    margin-top: -11px;
+    margin-left: -4px;
+    text-align: center;
+    text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+    font-weight: bold;
+}
+
+table.dataTable td.select-checkbox:before, table.dataTable td.select-checkbox:after,
+table.dataTable th.select-checkbox:before, table.dataTable th.select-checkbox:after {
+    display: block;
+    position: absolute;
+    top: 1.2em;
+    left: 50%;
+    width: 16px;
+    height: 15px;
+    box-sizing: border-box;
+}
+
+table.dataTable tr th.col-bttttt.select-checkbox.selected::after {
+    content: "✔";
+    margin-top: -23px;
+    margin-left: -4px;
+    left: 5%;
+    font-size: 18px;
+    text-shadow: rgb(176, 190, 217) 1px 1px, rgb(176, 190, 217) -1px -1px, rgb(176, 190, 217) 1px -1px, rgb(176, 190, 217) -1px 1px;
+    cursor: pointer;
+}
+
+table.dataTable tr th.select-checkbox.selected::after {
+    content: "✔";
+    margin-top: -19px;
+    margin-left: -4px;
+    text-align: center;
+    font-size: 18px;
+    text-shadow: rgb(176, 190, 217) 1px 1px, rgb(176, 190, 217) -1px -1px, rgb(176, 190, 217) 1px -1px, rgb(176, 190, 217) -1px 1px;
+}
+
+table.dataTable.row-border tbody tr:last-child th, table.dataTable.row-border tbody
+tr:last-child td, table.dataTable.display tbody tr:last-child th, table.dataTable.display tbody tr:last-child td {
+    border-top: none;
+}
+
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+    border-top: 1px solid #ddd;
+}
+
+table.dataTable td.select-checkbox, table.dataTable th.select-checkbox {
+    position: relative;
+}
+
+table.dataTable tr.selected th.select-checkbox:after {
+    content: '\2714';
+    margin-top: -11px;
+    margin-left: -4px;
+    text-align: center;
+    text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+}
+
+table.dataTable td.select-checkbox:before, table.dataTable td.select-checkbox:after,
+table.dataTable th.select-checkbox:before, table.dataTable th.select-checkbox:after {
+    display: block;
+    position: absolute;
+    top: 1.2em;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+}
+
+table.dataTable td.select-checkbox:before, table.dataTable th.select-checkbox:before {
+    content: ' ';
+    margin-top: -6px;
+    margin-left: -6px;
+    border: 1px solid #5f5858;
+    border-radius: 2px;
+}
+
+
+table.dataTable th.col-bttttt.select-checkbox::before {
+    display: block;
+    position: absolute;
+    top: 1.2em;
+    left: 6% !important;
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+}
+
+
+table.dataTable td.select-checkbox:before, table.dataTable td.select-checkbox:after,
+table.dataTable th.select-checkbox:before, table.dataTable th.select-checkbox:after {
+    display: block;
+    position: absolute;
+    top: 1.2em;
+    left: 50%;
+    width: 16px;
+    height: 15px;
+    box-sizing: border-box;
+}
+
+
+.col-closeby {
+    display: none;
+}
+
+.odd {
+    background-color: #e4e4e4;
+}
+
+#DataTables_Table_0_filter {
+    float: right;
+}
+
