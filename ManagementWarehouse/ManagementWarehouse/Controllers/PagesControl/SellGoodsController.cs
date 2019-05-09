@@ -10,6 +10,10 @@ namespace CRM_Finance.Controllers
         {
             return View("ListOrderSell");
         }
+        public ActionResult AddOrderSell()
+        {
+            return View("AddOrderSell");
+        }
         public ActionResult Deliveries()
         {
             return View("Deliveries");

@@ -148,7 +148,6 @@ function GetChildMenus() {
 
 function bindDataMenu(records) {
     if (records) {
-        debugger;
         for (var i = 0; i < records.length; i++) {
             records[i] = cleanObject(records[i]);
             $('.menu-item').each(function (idx, val) {

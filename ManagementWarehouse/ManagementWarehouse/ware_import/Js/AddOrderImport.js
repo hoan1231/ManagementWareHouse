@@ -1,59 +1,71 @@
 ﻿$(document).ready(function () {
     /**
-     * Sự kiện mở popup thêm mới sản phẩm
+     * Sự kiện mở popup thêm mới đơn nhập hàng
      * */
-    bindEventOpenAddProduct();
+    bindEventOpenAddImport();
     /**
-     * Lấy tất cả danh sách sản phẩm
+     * Lấy tất cả danh sách đơn nhập hàng
      * */
-    GetAllProduct();
+    GetAllImport();
 
-  //  Refresh();
+    //  Refresh();
+    /**
+     * Sự kiện thêm chi phí
+     * */
 
+    ChangeCheckboxExpense();
 
-  
 });
 
 /**
- * Lấy tất cả danh sách sản phẩm
+ * Lấy tất cả danh sách đơn nhập hàng
  * */
-var tblProduct;
-function GetAllProduct() {
-    if (tblProduct) {
-        tblProduct.destroy();
-        $('#tbdProduct').empty();
+var tblImport;
+function GetAllImport() {
+    if (tblImport) {
+        tblImport.destroy();
+        $('#tbdImport').empty();
     }
-          tblProduct = $('table#tblProduct').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "pageLength": 10
-            });
+    tblImport = $('table#tblImport').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "pageLength": 10
+    });
+}
+
+
+function ChangeCheckboxExpense() {
+    $("#chkExpense").change(function () {
+        var active = $('#chkExpense').is(':checked') ? "1" : "0";
+        if (active == "1") $("#showExpense").show();
+        else $("#showExpense").hide();
+    });
 }
 
 /**
- * Sự kiện mở popup thêm mới sản phẩm
+ * Sự kiện mở popup thêm mới đơn nhập hàng
  * */
-function bindEventOpenAddProduct() {
+function bindEventOpenAddImport() {
     $("#modalAdd").click(function (e) {
         e.preventDefault();
-        var itemCfAddProduct = $.confirm({
-            title: '<i class="fa fa-bank text-green"></i> Thêm mới sản phẩm',
+        var itemCfAddImport = $.confirm({
+            title: '<i class="fa fa-bank text-green"></i> Thêm mới đơn nhập hàng',
             type: 'blue',
             columnClass: 'x-large',
             content: '' +
                 '<div class="row no-margin"><div class="col-lg-3 col-md-4 col-sm-12">' +
-                '<div class="form-group"><label>Mã sản phẩm</label>' +
-                '<input type="text" id="txtContactPhone" placeholder="Nhập mã sản phẩm" class="form-control input-sm" /></div>' +
+                '<div class="form-group"><label>Mã đơn nhập hàng</label>' +
+                '<input type="text" id="txtContactPhone" placeholder="Nhập mã đơn nhập hàng" class="form-control input-sm" /></div>' +
                 '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
-                '<div class="form-group"><label>Tên sản phẩm</label>' +
-                '<input type="text" id="txtNameProduct" placeholder="Nhập tên sản phẩm" class="form-control input-sm" /></div>' +
+                '<div class="form-group"><label>Tên đơn nhập hàng</label>' +
+                '<input type="text" id="txtNameImport" placeholder="Nhập tên đơn nhập hàng" class="form-control input-sm" /></div>' +
                 '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
-                '<div class="form-group"><label>Loại sản phẩm</label>' +
-                '<select id="ddlType" placeholder="Nhập loại sản phẩm" class="form-control input-sm" /></select></div>' +
+                '<div class="form-group"><label>Loại đơn nhập hàng</label>' +
+                '<select id="ddlType" placeholder="Nhập loại đơn nhập hàng" class="form-control input-sm" /></select></div>' +
                 '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
                 '<div class="form-group"><label>Mã vạch</label>' +
                 '<select id="ddlKytu" placeholder="Nhập mã vạch" class="form-control input-sm" /></select></div>' +
@@ -79,13 +91,13 @@ function bindEventOpenAddProduct() {
                 '<div class="form-group"><label>Số lượng</label>' +
                 '<input type="text" id="txtNumberAgent" placeholder="Nhập số lượng" class="form-control input-sm" />' +
                 '</div></div><div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><div class="form-group">' +
-                '<label>Thuế sản phẩm</label>' +
+                '<label>Thuế đơn nhập hàng</label>' +
                 '<select id="ddlThue" placeholder="Chọn thuế" class="form-control input-sm select2"/><option value=""></option></select>' +
                 '</div></div><div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><div class="form-group">' +
                 '<label>Phương thức tính thuế</label>' +
                 '<select id="ddlThue" placeholder="Chọn phương thức" class="form-control input-sm select2"/><option value=""></option></select>' +
                 '</div></div><div class="col-ld-3 col-md-4 col-xs-12"><div class="form-group">' +
-                '<label>Ảnh sản phẩm</label>' +
+                '<label>Ảnh đơn nhập hàng</label>' +
                 '<input type="text" id="txtImage" placeholder="Nhập ảnh" class="form-control input-sm" />' +
                 '</div></div><div class="col-md-2"><div class="form-group">' +
                 '<label>Promotion</label><span class="checkbox checkbox-success">' +
@@ -98,7 +110,7 @@ function bindEventOpenAddProduct() {
             buttons: {
                 formSubmit: {
                     text: 'Lưu thông tin',
-                    btnClass: 'btn-blue btn-add-Product',
+                    btnClass: 'btn-blue btn-add-Import',
                     action: function () {
 
                         return false;
@@ -119,17 +131,4 @@ function bindEventOpenAddProduct() {
             }
         });
     });
-}
-
-/**
- * Định dạng date time dd/MM/yyyy HH:mm:ss
- * @param {any} date item
- * @return {any} item dd/MM/yyyy HH:mm:ss
- */
-function formatDate(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ':' + date.getSeconds();
-    return date.getDate() + "/" + ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear() + "  " + strTime;
 }

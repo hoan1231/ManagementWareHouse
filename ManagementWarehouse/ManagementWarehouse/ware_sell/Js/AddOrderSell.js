@@ -2,45 +2,57 @@
     /**
      * Sự kiện mở popup thêm mới sản phẩm
      * */
-    bindEventOpenAddProduct();
+    bindEventOpenAddSell();
     /**
      * Lấy tất cả danh sách sản phẩm
      * */
-    GetAllProduct();
+    GetAllSell();
 
-  //  Refresh();
+    //  Refresh();
+    /**
+     * Sự kiện thêm chi phí
+     * */
 
+    ChangeCheckboxExpense();
 
-  
 });
 
 /**
  * Lấy tất cả danh sách sản phẩm
  * */
-var tblProduct;
-function GetAllProduct() {
-    if (tblProduct) {
-        tblProduct.destroy();
-        $('#tbdProduct').empty();
+var tblSell;
+function GetAllSell() {
+    if (tblSell) {
+        tblSell.destroy();
+        $('#tbdSell').empty();
     }
-          tblProduct = $('table#tblProduct').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "pageLength": 10
-            });
+    tblSell = $('table#tblSell').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "pageLength": 10
+    });
+}
+
+
+function ChangeCheckboxExpense() {
+    $("#chkExpense").change(function () {
+        var active = $('#chkExpense').is(':checked') ? "1" : "0";
+        if (active == "1") $("#showExpense").show();
+        else $("#showExpense").hide();
+    });
 }
 
 /**
  * Sự kiện mở popup thêm mới sản phẩm
  * */
-function bindEventOpenAddProduct() {
+function bindEventOpenAddSell() {
     $("#modalAdd").click(function (e) {
         e.preventDefault();
-        var itemCfAddProduct = $.confirm({
+        var itemCfAddSell = $.confirm({
             title: '<i class="fa fa-bank text-green"></i> Thêm mới sản phẩm',
             type: 'blue',
             columnClass: 'x-large',
@@ -50,7 +62,7 @@ function bindEventOpenAddProduct() {
                 '<input type="text" id="txtContactPhone" placeholder="Nhập mã sản phẩm" class="form-control input-sm" /></div>' +
                 '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
                 '<div class="form-group"><label>Tên sản phẩm</label>' +
-                '<input type="text" id="txtNameProduct" placeholder="Nhập tên sản phẩm" class="form-control input-sm" /></div>' +
+                '<input type="text" id="txtNameSell" placeholder="Nhập tên sản phẩm" class="form-control input-sm" /></div>' +
                 '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
                 '<div class="form-group"><label>Loại sản phẩm</label>' +
                 '<select id="ddlType" placeholder="Nhập loại sản phẩm" class="form-control input-sm" /></select></div>' +
@@ -98,7 +110,7 @@ function bindEventOpenAddProduct() {
             buttons: {
                 formSubmit: {
                     text: 'Lưu thông tin',
-                    btnClass: 'btn-blue btn-add-Product',
+                    btnClass: 'btn-blue btn-add-Sell',
                     action: function () {
 
                         return false;
@@ -119,17 +131,4 @@ function bindEventOpenAddProduct() {
             }
         });
     });
-}
-
-/**
- * Định dạng date time dd/MM/yyyy HH:mm:ss
- * @param {any} date item
- * @return {any} item dd/MM/yyyy HH:mm:ss
- */
-function formatDate(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ':' + date.getSeconds();
-    return date.getDate() + "/" + ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear() + "  " + strTime;
 }

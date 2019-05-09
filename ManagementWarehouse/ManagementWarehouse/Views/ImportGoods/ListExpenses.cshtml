@@ -4,5 +4,80 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ListExpenses</h2>
+<script src="/Content/plugins/Toastrjs/toastr.min.js"></script>
+<link rel="stylesheet" href="/Content/plugins/Toastrjs/toastr.min.css" />
+<script src="/Content/plugins/jQueryUrl/jquery.url.js" type="text/javascript"></script>
+<link href="/crm_manager/CSS/Menu.css" rel="stylesheet" />
+<script src="/crm_manager/js/jquery.mptelecom.js"></script>
+<script src="~/ware_import/Js/Expenses.js"></script>
+<link rel="stylesheet" href="/Content/dist/checkstyle/build.css" />
+
+
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs" style="float:right;">
+        <li class="active">
+
+            <a href="#manager" data-toggle="tab">
+                <ul class="btn-tasks">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon fa fa-tasks tip" data-placement="left" title="" data-original-title="Tác vụ"></i>Công cụ
+                        </a>
+                        <ul class="dropdown-menu pull-right tasks-menus">
+                            <li>
+                                <a id="modalAdd" href="#">
+                                    <i class="fa fa-plus-circle"></i> Thêm mới
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="btnExport">
+                                    <i class="fa fa-file-excel-o"></i> Xuất ra file Excel
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="chart tab-pane active" id="manager">
+            <div class="box">
+                <div class="box-header with-border">
+                    <i class="ion ion-clipboard"></i>
+                    <h3 class="box-title">Danh sách chi phí</h3>
+                    <table id="tblExpenses" class="table table-bordered table-hover">
+                        <thead class="scroll-table">
+                            <tr class="success">
+                                <th>STT</th>
+                                <th>Ngày</th>
+                                <th>Số tham chiếu</th>
+                                <th>Danh mục</th>
+                                <th>Số lượng</th>
+                                <th>Người tạo</th>
+                                <th>Ngày tạo</th>
+                                <th>Ghi chú</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbdExpenses">
+                            <tr>
+                                <td>0</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><i class="fa fa-edit fa-lg text-info mp-pointer-st" tooltip="Sửa"></i><i style="margin-left:5px;" class="fa fa-trash-o fa-lg text-red mp-pointer-st" tooltip="Xóa"></i></td>
+
+</tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 

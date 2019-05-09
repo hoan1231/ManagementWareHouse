@@ -2273,6 +2273,14 @@
     <Content Include="Scripts\knockout-3.4.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SQLTicket.sql" />
+    <Content Include="ware_import\Js\ListOrderImport.js" />
+    <Content Include="ware_import\Js\TransferWarehouse.js" />
+    <Content Include="ware_sell\Js\AddOrderSell.js" />
+    <Content Include="ware_sell\Js\Promotion.js" />
+    <Content Include="ware_sell\Js\ListOrderSell.js" />
+    <Content Include="ware_sell\Js\Deliveries.js" />
+    <Content Include="ware_import\Js\AddOrderImport.js" />
+    <Content Include="ware_import\Js\Expenses.js" />
     <Content Include="ware_product\Js\Ajustment.js" />
     <Content Include="ware_product\Js\Products.js" />
     <Content Include="Web.config">
@@ -2316,6 +2324,8 @@
     <Content Include="Views\Products\PrintBarCode.cshtml" />
     <Content Include="Views\Products\AddAjustment.cshtml" />
     <Content Include="Views\Products\StoctCounts.cshtml" />
+    <Content Include="Views\ImportGoods\AddOrderImport.cshtml" />
+    <Content Include="Views\SellGoods\AddOrderSell.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2324,9 +2334,11 @@
     <Folder Include="MP.Core\Lib\Extension\" />
     <Folder Include="MP.Core\ModelExt\Products\" />
     <Folder Include="MP.Core\ModelExt\Reports\" />
+    <Folder Include="ware_import\CSS\" />
     <Folder Include="ware_product\CSS\" />
     <Folder Include="ware_report\CSS\" />
     <Folder Include="ware_report\Js\" />
+    <Folder Include="ware_sell\CSS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

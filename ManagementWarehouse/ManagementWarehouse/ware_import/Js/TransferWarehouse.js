@@ -100,12 +100,38 @@ function bindEventOpenAddProduct() {
                     text: 'Lưu thông tin',
                     btnClass: 'btn-blue btn-add-Product',
                     action: function () {
+                     
+                                        return false;
+                                    }
+                                },
+                                cancel: function () {
+                                    text: 'Đóng'
+                                }
+                            },
+                            onContentReady: function () {
+                                // bind to events
+                                var jc = this;
+                                this.$content.find('form').on('submit', function (e) {
+                                    // if the user submits the form by pressing enter in the field.
+                                    e.preventDefault();
+                                    jc.$$formSubmit.trigger('click'); // reference the button and click it
+                                });
+                            }
+                        });
+
+
+
+
+
 
                         return false;
                     }
                 },
-                cancel: function () {
-                    text: 'Đóng'
+                cancel: {
+                    text: 'Hủy',
+                    keys: ['esc'],
+                    action: function () {
+                    }
                 }
             },
             onContentReady: function () {
@@ -119,6 +145,90 @@ function bindEventOpenAddProduct() {
             }
         });
     });
+
+
+
+    //$("#AddProduct").click(function () {
+    //    var compa = new Object();
+    //    compa.Product = $("input[id$='txtNameProduct']").val();
+    //    compa.IPServerDB = $("input[id$='txtIPServerName']").val();
+    //    compa.ServerNameDB = $("input[id$='txtServerNameDB']").val();
+    //    compa.UserNameDB = $("input[id$='txtNameLoginDB']").val();
+    //    compa.PassDB = $("input[id$='txtPassLoginDB']").val();
+    //    compa.NumberAgent = $("input[id$='txtNumberAgent']").val();
+    //    compa.Status = $("#chkStatus").is(":checked");
+    //    compa.Note = $("input[id$='txtNote']").val();
+    //    compa.Icon = $("input[id$='txtIcon']").val();
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/api/Product/AddProduct",
+    //        dataType: "json",
+    //        data: compa
+    //        , success: function (msg) {
+    //            console.log(msg.value);
+    //            if (msg.value == "ok") {
+    //                alert("thêm mới thành công");
+    //            }
+    //            Refresh();
+    //            GetAllProduct();
+    //        }
+    //        , complete: function () {
+    //        }
+    //    });
+    //});
+
+
+
+
+}
+
+/**
+ * Kiểm tra nhập liệu thông tin sản phẩm
+ * @param {any} item Product
+ * @returns {any} true/false
+ */
+function validateInputProduct(item) {
+    if (item.ProductCode && item.ProductCode.length !== 5) {
+        $.alert({
+            title: 'Cảnh báo!',
+            type: 'red',
+            icon: 'fa fa-warning',
+            content: '<code>Mã định danh sản phẩm yêu cầu 5 ký tự.</code>'
+        });
+        return false;
+    }
+    if (!item.ProductName || !item.DBServer || !item.ProductCode ||
+        !item.UserNumber || !item.Note || !item.VoiceServer || !item.ContactPhone ||
+        !item.ContactName || item.ContactEmail) {
+        $.alert({
+            title: 'Cảnh báo!',
+            type: 'red',
+            icon: 'fa fa-warning',
+            content: '<code>Yêu cầu nhập đầy đủ thông tin.</code>'
+        });
+        return false;
+    }
+    return true;
+}
+
+/**
+ * Lấy các thông tin sản phẩm nhập vào
+ * @param {any} $control item
+ * @returns {any} item Product
+ */
+function getProductInput($control) {
+    var compa = new Object();
+    compa.ProductName = $control.$content.find('#txtNameProduct').val();
+    compa.ProductEmail = $control.$content.find('#txtContactEmail').val();
+    compa.ContactName = $control.$content.find('#txtContactName').val();
+    compa.ContactPhone = $control.$content.find('#txtContactPhone').val();
+    compa.DBServer = $control.$content.find('#txtIPServerName').val();
+    compa.ProductCode = $control.$content.find('#txtProductCode').val().toUpperCase();
+    compa.UserNumber = $control.$content.find('#txtNumberAgent').val();
+    compa.Status = $control.$content.find('#chkStatus').is(":checked");
+    compa.Note = $control.$content.find('#txtNote').val();
+    compa.VoiceServer = $control.$content.find('#txtVoiceServer').val();
+    return compa;
 }
 
 /**
