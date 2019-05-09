@@ -1,6 +1,6 @@
 ﻿var listItemNotifi; var listItemNotifiService;
 $(function () {
-    var vocRoles = JSON.parse(JSON.parse(localStorage.getItem('VOCRolesCRM_Finance')));
+    var vocRoles = JSON.parse(JSON.parse(localStorage.getItem('VOCRolesKTStore')));
     console.log(vocRoles);
     //$.support.cors = true;
     //var iurl = 'https://dfis.mpcrm.vn/';

@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Web.Http.Controllers;
 using System.Web.Mvc;
 
-namespace CRM_Finance
+namespace KTStore
 {
     public class FilterConfig
     {

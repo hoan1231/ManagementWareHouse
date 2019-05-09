@@ -1,7 +1,7 @@
-﻿using CRM_Finance.Models;
-using CRM_Finance.MP.Core.BUS.MNG;
-using CRM_Finance.Providers;
-using CRM_Finance.Results;
+﻿using KTStore.Models;
+using KTStore.MP.Core.BUS.MNG;
+using KTStore.Providers;
+using KTStore.Results;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
-namespace CRM_Finance.Controllers
+namespace KTStore.Controllers
 {
     [MPAuthorize]
     [RoutePrefix("api/Account")]

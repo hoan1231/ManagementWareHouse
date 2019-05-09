@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace CRM_Finance.Controllers.PagesControl
+namespace KTStore.Controllers.PagesControl
 {
     public class ErrController : Controller
     {

@@ -1,10 +1,10 @@
-﻿using CRM_Finance.MP.Core.Lib.Helper;
+﻿using KTStore.MP.Core.Lib.Helper;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace CRM_Finance
+namespace KTStore
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

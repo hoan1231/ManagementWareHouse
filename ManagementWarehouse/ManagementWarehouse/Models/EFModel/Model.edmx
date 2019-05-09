@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ManagementWarehouseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="KTStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -253,7 +253,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ManagementWarehouseModelStoreContainer">
+        <EntityContainer Name="KTStoreModelStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
@@ -288,7 +288,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ManagementWarehouseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="KTStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="C__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -511,7 +511,7 @@
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="ManagementWarehouseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="KTStoreEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
@@ -542,9 +542,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ManagementWarehouseModelStoreContainer" CdmEntityContainer="ManagementWarehouseEntities">
+        <EntityContainerMapping StorageEntityContainer="KTStoreModelStoreContainer" CdmEntityContainer="KTStoreEntities">
           <EntitySetMapping Name="C__MigrationHistory">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.C__MigrationHistory">
+            <EntityTypeMapping TypeName="KTStoreModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
                 <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
                 <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
@@ -554,7 +554,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.AspNetRoles">
+            <EntityTypeMapping TypeName="KTStoreModel.AspNetRoles">
               <MappingFragment StoreEntitySet="AspNetRoles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
@@ -570,7 +570,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.AspNetUserClaims">
+            <EntityTypeMapping TypeName="KTStoreModel.AspNetUserClaims">
               <MappingFragment StoreEntitySet="AspNetUserClaims">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -580,7 +580,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.AspNetUserLogins">
+            <EntityTypeMapping TypeName="KTStoreModel.AspNetUserLogins">
               <MappingFragment StoreEntitySet="AspNetUserLogins">
                 <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
                 <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -589,7 +589,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.AspNetUsers">
+            <EntityTypeMapping TypeName="KTStoreModel.AspNetUsers">
               <MappingFragment StoreEntitySet="AspNetUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Department" ColumnName="Department" />
@@ -621,7 +621,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MNG_Category">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.MNG_Category">
+            <EntityTypeMapping TypeName="KTStoreModel.MNG_Category">
               <MappingFragment StoreEntitySet="MNG_Category">
                 <ScalarProperty Name="CatID" ColumnName="CatID" />
                 <ScalarProperty Name="CatCode" ColumnName="CatCode" />
@@ -640,7 +640,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MNG_CatType">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.MNG_CatType">
+            <EntityTypeMapping TypeName="KTStoreModel.MNG_CatType">
               <MappingFragment StoreEntitySet="MNG_CatType">
                 <ScalarProperty Name="CatTypeCode" ColumnName="CatTypeCode" />
                 <ScalarProperty Name="CatTypeName" ColumnName="CatTypeName" />
@@ -650,7 +650,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MNG_HistoryLogin">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.MNG_HistoryLogin">
+            <EntityTypeMapping TypeName="KTStoreModel.MNG_HistoryLogin">
               <MappingFragment StoreEntitySet="MNG_HistoryLogin">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -662,7 +662,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MNG_Menu">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.MNG_Menu">
+            <EntityTypeMapping TypeName="KTStoreModel.MNG_Menu">
               <MappingFragment StoreEntitySet="MNG_Menu">
                 <ScalarProperty Name="MenuId" ColumnName="MenuId" />
                 <ScalarProperty Name="MenuName" ColumnName="MenuName" />
@@ -682,7 +682,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MNG_RoleInMenu">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.MNG_RoleInMenu">
+            <EntityTypeMapping TypeName="KTStoreModel.MNG_RoleInMenu">
               <MappingFragment StoreEntitySet="MNG_RoleInMenu">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
@@ -706,7 +706,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MNG_UserToken">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.MNG_UserToken">
+            <EntityTypeMapping TypeName="KTStoreModel.MNG_UserToken">
               <MappingFragment StoreEntitySet="MNG_UserToken">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -723,7 +723,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MNG_Version">
-            <EntityTypeMapping TypeName="ManagementWarehouseModel.MNG_Version">
+            <EntityTypeMapping TypeName="KTStoreModel.MNG_Version">
               <MappingFragment StoreEntitySet="MNG_Version">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Version" ColumnName="Version" />
@@ -736,7 +736,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="ManagementWarehouseModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="KTStoreModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>

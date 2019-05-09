@@ -32,14 +32,14 @@
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    var tokenChk = localStorage.getItem('accessTokenCRM_Finance');
+    var tokenChk = localStorage.getItem('accessTokenKTStore');
     if (tokenChk) location.href = "/MNG/Menu";
 });
 
 
 function ViewModel() {
     var self = this;
-    var tokenKey = 'accessTokenCRM_Finance';
+    var tokenKey = 'accessTokenKTStore';
 
     self.result = ko.observable();
     self.user = ko.observable();
@@ -146,8 +146,8 @@ function ViewModel() {
                     localStorage.setItem('UserName', msg.UserName);
                     localStorage.setItem('UserID', msg.UserID);
                     localStorage.setItem('Roles', msg.Roles);
-                    localStorage.setItem('menuTokenCRM_Finance', JSON.stringify(msg.Menus));
-                    localStorage.setItem('VOCRolesCRM_Finance', JSON.stringify(msg.VOCRoles));
+                    localStorage.setItem('menuTokenKTStore', JSON.stringify(msg.Menus));
+                    localStorage.setItem('VOCRolesKTStore', JSON.stringify(msg.VOCRoles));
                     if (!myParam) location.href = "/MNG/Menu";
                     else location.href = myParam;
                 }

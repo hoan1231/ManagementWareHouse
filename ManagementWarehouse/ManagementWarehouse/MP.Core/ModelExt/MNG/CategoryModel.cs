@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CRM_Finance.MP.Core.ModelExt.MNG
+namespace KTStore.MP.Core.ModelExt.MNG
 {
     public class CategoryModel
     {

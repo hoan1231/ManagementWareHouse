@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRM_Finance.Models.EFModel
+namespace KTStore.Models.EFModel
 {
     using System;
     using System.Collections.Generic;

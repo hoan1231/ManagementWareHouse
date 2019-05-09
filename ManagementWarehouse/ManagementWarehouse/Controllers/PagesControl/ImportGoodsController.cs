@@ -1,8 +1,8 @@
-﻿using CRM_Finance.Library.Helper;
+﻿using KTStore.Library.Helper;
 using System;
 using System.Web.Mvc;
 
-namespace CRM_Finance.Controllers
+namespace KTStore.Controllers
 {
     public class ImportGoodsController : Controller
     {

@@ -5,21 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="224d84f888494b6a9edb4f8bc5641ef8" Name="Diagram1">
-        <EntityTypeShape EntityType="ManagementWarehouseModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.AspNetUsers" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.MNG_Category" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.MNG_CatType" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.MNG_HistoryLogin" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.MNG_Menu" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.MNG_RoleInMenu" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.MNG_UserToken" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementWarehouseModel.MNG_Version" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="ManagementWarehouseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="ManagementWarehouseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="ManagementWarehouseModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KTStoreModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.AspNetUsers" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.MNG_Category" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.MNG_CatType" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.MNG_HistoryLogin" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.MNG_Menu" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.MNG_RoleInMenu" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.MNG_UserToken" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KTStoreModel.MNG_Version" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="KTStoreModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="KTStoreModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="KTStoreModel.AspNetUserRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

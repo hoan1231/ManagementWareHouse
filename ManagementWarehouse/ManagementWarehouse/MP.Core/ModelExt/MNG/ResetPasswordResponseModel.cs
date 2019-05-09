@@ -1,4 +1,4 @@
-﻿namespace CRM_Finance.MP.Core.ModelExt.MNG
+﻿namespace KTStore.MP.Core.ModelExt.MNG
 {
     public class ResetPasswordResponseModel
     {

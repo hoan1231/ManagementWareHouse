@@ -1,7 +1,7 @@
-﻿using CRM_Finance.Library.Helper;
-using CRM_Finance.Models;
-using CRM_Finance.Models.EFModel;
-using CRM_Finance.MP.Core.BUS.MNG;
+﻿using KTStore.Library.Helper;
+using KTStore.Models;
+using KTStore.Models.EFModel;
+using KTStore.MP.Core.BUS.MNG;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
-namespace CRM_Finance.Controllers.Manager
+namespace KTStore.Controllers.Manager
 {
     [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
     [MPAuthorize]

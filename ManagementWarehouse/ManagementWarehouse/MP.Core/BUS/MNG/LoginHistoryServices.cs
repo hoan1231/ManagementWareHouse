@@ -1,11 +1,11 @@
-﻿using CRM_Finance.Models.EFModel;
-using CRM_Finance.MP.Core.Lib.Helper;
+﻿using KTStore.Models.EFModel;
+using KTStore.MP.Core.Lib.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace CRM_Finance.MP.Core.BUS.MNG
+namespace KTStore.MP.Core.BUS.MNG
 {
     public class LoginHistoryServices
     {
@@ -19,7 +19,7 @@ namespace CRM_Finance.MP.Core.BUS.MNG
         {
             try
             {
-                ManagementWarehouseEntities dbContext = new ManagementWarehouseEntities();
+                KTStoreEntities dbContext = new KTStoreEntities();
                 List<MNG_HistoryLogin> lst = new List<MNG_HistoryLogin>();
                 if (!isExport)
                 {

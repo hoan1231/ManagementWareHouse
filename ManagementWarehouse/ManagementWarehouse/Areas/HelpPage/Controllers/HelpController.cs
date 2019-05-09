@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using CRM_Finance.Areas.HelpPage.ModelDescriptions;
-using CRM_Finance.Areas.HelpPage.Models;
+using KTStore.Areas.HelpPage.ModelDescriptions;
+using KTStore.Areas.HelpPage.Models;
 
-namespace CRM_Finance.Areas.HelpPage.Controllers
+namespace KTStore.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

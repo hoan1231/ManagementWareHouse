@@ -1,7 +1,7 @@
-﻿using CRM_Finance.Models.EFModel;
+﻿using KTStore.Models.EFModel;
 using System;
 
-namespace CRM_Finance.MP.Core.BUS.MNG
+namespace KTStore.MP.Core.BUS.MNG
 {
     public class AccountServices
     {
@@ -11,7 +11,7 @@ namespace CRM_Finance.MP.Core.BUS.MNG
         /// <param name="login"></param>
         public void CreateLoginHistory(MNG_HistoryLogin login)
         {
-            ManagementWarehouseEntities dbContext = new ManagementWarehouseEntities();
+            KTStoreEntities dbContext = new KTStoreEntities();
             dbContext.MNG_HistoryLogin.Add(new MNG_HistoryLogin()
             {
                 DateLogin = DateTime.Now,

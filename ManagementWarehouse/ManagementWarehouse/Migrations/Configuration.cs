@@ -1,18 +1,18 @@
-namespace CRM_Finance.Migrations
+namespace KTStore.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CRM_Finance.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<KTStore.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(CRM_Finance.Models.ApplicationDbContext context)
+        protected override void Seed(KTStore.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

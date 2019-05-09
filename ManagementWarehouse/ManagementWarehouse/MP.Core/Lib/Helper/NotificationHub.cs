@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CRM_Finance.MP.Core.Lib.Helper
+namespace KTStore.MP.Core.Lib.Helper
 {
     [HubName("notificationHub")]
     public class NotificationHub : Hub

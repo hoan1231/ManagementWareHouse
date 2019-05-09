@@ -1,9 +1,9 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(CRM_Finance.Startup))]
+[assembly: OwinStartup(typeof(KTStore.Startup))]
 
-namespace CRM_Finance
+namespace KTStore
 {
     public partial class Startup
     {

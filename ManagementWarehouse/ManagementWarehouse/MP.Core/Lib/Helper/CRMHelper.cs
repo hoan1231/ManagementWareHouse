@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Web.Script.Serialization;
 
-namespace CRM_Finance.MP.Core.Lib.Helper
+namespace KTStore.MP.Core.Lib.Helper
 {
     public static class CRMHelper
     {

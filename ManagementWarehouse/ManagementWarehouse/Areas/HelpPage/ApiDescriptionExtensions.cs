@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace CRM_Finance.Areas.HelpPage
+namespace KTStore.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

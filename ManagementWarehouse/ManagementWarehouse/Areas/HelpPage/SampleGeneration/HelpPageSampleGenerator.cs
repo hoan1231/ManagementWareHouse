@@ -13,7 +13,7 @@ using System.Web.Http.Description;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 
-namespace CRM_Finance.Areas.HelpPage
+namespace KTStore.Areas.HelpPage
 {
     /// <summary>
     /// This class will generate the samples for the help page.

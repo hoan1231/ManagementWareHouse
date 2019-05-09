@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace CRM_Finance.Library.Helper
+namespace KTStore.Library.Helper
 {
     public static class DataTableHelper
     {

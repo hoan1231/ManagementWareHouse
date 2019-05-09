@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRM_Finance {
+namespace KTStore {
     
     
     public partial class _Default {

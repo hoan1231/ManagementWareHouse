@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace CRM_Finance.Controllers
+namespace KTStore.Controllers
 {
     // Models used as parameters to AccountController actions.
 

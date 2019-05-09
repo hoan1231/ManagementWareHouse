@@ -1,4 +1,4 @@
-﻿using CRM_Finance.Models;
+﻿using KTStore.Models;
 using Library.Helper;
 using System;
 using System.Data;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 
-namespace CRM_Finance.MP.Core.BUS.MNG
+namespace KTStore.MP.Core.BUS.MNG
 {
     public class ForgotPasswordServices
     {

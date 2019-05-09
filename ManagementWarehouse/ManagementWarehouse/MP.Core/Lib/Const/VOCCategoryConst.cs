@@ -1,4 +1,4 @@
-﻿namespace CRM_Finance.Library.Const
+﻿namespace KTStore.Library.Const
 {
     public static class VOCCategoryConst
     {

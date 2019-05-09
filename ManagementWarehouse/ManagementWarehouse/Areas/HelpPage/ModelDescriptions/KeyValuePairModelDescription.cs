@@ -1,4 +1,4 @@
-namespace CRM_Finance.Areas.HelpPage.ModelDescriptions
+namespace KTStore.Areas.HelpPage.ModelDescriptions
 {
     public class KeyValuePairModelDescription : ModelDescription
     {

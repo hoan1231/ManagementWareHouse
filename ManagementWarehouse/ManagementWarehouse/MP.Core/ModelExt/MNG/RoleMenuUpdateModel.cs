@@ -1,7 +1,7 @@
-﻿using CRM_Finance.Models.EFModel;
+﻿using KTStore.Models.EFModel;
 using System.Collections.Generic;
 
-namespace CRM_Finance.MP.Core.ModelExt.MNG
+namespace KTStore.MP.Core.ModelExt.MNG
 {
     public class RoleMenuUpdateModel
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CRM_Finance.Controllers
+namespace KTStore.Controllers
 {
     // Models returned by AccountController actions.
 

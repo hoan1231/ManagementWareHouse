@@ -1,4 +1,4 @@
-﻿using CRM_Finance.MP.Core.BUS.MNG;
+﻿using KTStore.MP.Core.BUS.MNG;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using OtpSharp;
@@ -6,7 +6,7 @@ using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CRM_Finance.Models
+namespace KTStore.Models
 {
     public class GoogleAuthenticatorTokenProvider : IUserTokenProvider<ApplicationUser, string>
     {

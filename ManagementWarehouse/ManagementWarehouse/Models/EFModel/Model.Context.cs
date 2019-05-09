@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRM_Finance.Models.EFModel
+namespace KTStore.Models.EFModel
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ManagementWarehouseEntities : DbContext
+    public partial class KTStoreEntities : DbContext
     {
-        public ManagementWarehouseEntities()
-            : base("name=ManagementWarehouseEntities")
+        public KTStoreEntities()
+            : base("name=KTStoreEntities")
         {
         }
     

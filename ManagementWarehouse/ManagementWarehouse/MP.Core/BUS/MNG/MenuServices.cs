@@ -1,12 +1,12 @@
-﻿using CRM_Finance.Library.Helper;
-using CRM_Finance.Models.EFModel;
+﻿using KTStore.Library.Helper;
+using KTStore.Models.EFModel;
 using Library.Helper;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace CRM_Finance.MP.Core.BUS.MNG
+namespace KTStore.MP.Core.BUS.MNG
 {
     public class MenuServices
     {
@@ -120,7 +120,7 @@ namespace CRM_Finance.MP.Core.BUS.MNG
         {
             try
             {
-                ManagementWarehouseEntities dbContext = new ManagementWarehouseEntities();
+                KTStoreEntities dbContext = new KTStoreEntities();
                 if (dbContext.MNG_Menu.Any(x => x.OrderIndex == menu.OrderIndex && x.MenuName == menu.MenuName && x.MenuId != menu.MenuId))
                     return MP_AjaxError.Exits;
 
@@ -154,7 +154,7 @@ namespace CRM_Finance.MP.Core.BUS.MNG
         {
             try
             {
-                ManagementWarehouseEntities dbContext = new ManagementWarehouseEntities();
+                KTStoreEntities dbContext = new KTStoreEntities();
                 if (dbContext.MNG_Menu.Any(x => x.OrderIndex == menu.OrderIndex && x.MenuName == menu.MenuName))
                     return MP_AjaxError.Exits;
                 dbContext.MNG_Menu.Add(new MNG_Menu()

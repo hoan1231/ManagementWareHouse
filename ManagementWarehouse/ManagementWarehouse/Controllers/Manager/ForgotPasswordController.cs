@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using CRM_Finance.MP.Core.BUS.MNG;
-using CRM_Finance.MP.Core.Lib.Helper;
-using CRM_Finance.MP.Core.ModelExt.MNG;
+using KTStore.MP.Core.BUS.MNG;
+using KTStore.MP.Core.Lib.Helper;
+using KTStore.MP.Core.ModelExt.MNG;
 using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace CRM_Finance.Controllers.Manager
+namespace KTStore.Controllers.Manager
 {
     [RoutePrefix("api/ForgotPassword")]
     public class ForgotPasswordController : ApiController

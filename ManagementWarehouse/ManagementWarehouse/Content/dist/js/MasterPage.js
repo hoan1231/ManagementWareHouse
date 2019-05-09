@@ -1,4 +1,4 @@
-﻿var tokenKey = 'accessTokenCRM_Finance';
+﻿var tokenKey = 'accessTokenKTStore';
 var token = localStorage.getItem(tokenKey);
 //var headers = new Headers();
 
@@ -130,14 +130,14 @@ $(function () {
 });
 
 function GetChildMenus() {
-    var records = localStorage.getItem('menuTokenCRM_Finance');
+    var records = localStorage.getItem('menuTokenKTStore');
     if (!records) {
         $.ajax({
             type: "GET",
             url: "/api/Account/GetMenuByUserId",
             datatype: "json",
             success: function (msg) {
-                localStorage.setItem('menuTokenCRM_Finance', JSON.stringify(msg.value));
+                localStorage.setItem('menuTokenKTStore', JSON.stringify(msg.value));
                 bindDataMenu(msg.value);
             }
         });

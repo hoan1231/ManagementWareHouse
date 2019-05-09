@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace CRM_Finance.Areas.HelpPage
+namespace KTStore.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

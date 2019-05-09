@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace CRM_Finance
+namespace KTStore
 {
     public class BundleConfig
     {

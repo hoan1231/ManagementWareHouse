@@ -1,5 +1,5 @@
-﻿using CRM_Finance.Models;
-using CRM_Finance.MP.Core.BUS.MNG;
+﻿using KTStore.Models;
+using KTStore.MP.Core.BUS.MNG;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
@@ -16,7 +16,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CRM_Finance.Providers
+namespace KTStore.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

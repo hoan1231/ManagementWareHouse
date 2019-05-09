@@ -1,18 +1,18 @@
-﻿using CRM_Finance.Models.EFModel;
+﻿using KTStore.Models.EFModel;
 using Library.Helper;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace CRM_Finance.Bussiness.Manager
+namespace KTStore.Bussiness.Manager
 {
     public class MNG_CatTypeManager
     {
-        ManagementWarehouseEntities dbContext = null;
+        KTStoreEntities dbContext = null;
 
         public MNG_CatTypeManager()
         {
-            dbContext = new ManagementWarehouseEntities();
+            dbContext = new KTStoreEntities();
         }
         public DataTable GetCatTypeMenu()
         {

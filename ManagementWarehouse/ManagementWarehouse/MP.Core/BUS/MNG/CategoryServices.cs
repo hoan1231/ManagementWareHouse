@@ -1,21 +1,21 @@
-﻿using CRM_Finance.Library.Helper;
-using CRM_Finance.Models.EFModel;
-using CRM_Finance.MP.Core.Lib.Helper;
-using CRM_Finance.MP.Core.ModelExt.MNG;
+﻿using KTStore.Library.Helper;
+using KTStore.Models.EFModel;
+using KTStore.MP.Core.Lib.Helper;
+using KTStore.MP.Core.ModelExt.MNG;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace CRM_Finance.MP.Core.BUS.MNG
+namespace KTStore.MP.Core.BUS.MNG
 {
     public class CategoryServices
     {
-        private ManagementWarehouseEntities dbContext = null;
+        private KTStoreEntities dbContext = null;
         public CategoryServices()
         {
-            dbContext = new ManagementWarehouseEntities();
+            dbContext = new KTStoreEntities();
         }
 
         #region CatType

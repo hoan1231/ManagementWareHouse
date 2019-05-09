@@ -1,5 +1,5 @@
-﻿using CRM_Finance.Models;
-using CRM_Finance.Providers;
+﻿using KTStore.Models;
+using KTStore.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
@@ -13,7 +13,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Web.Helpers;
 
-namespace CRM_Finance
+namespace KTStore
 {
     public partial class Startup
     {

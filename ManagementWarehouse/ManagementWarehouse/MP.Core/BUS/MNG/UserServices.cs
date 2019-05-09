@@ -1,5 +1,5 @@
-﻿using CRM_Finance.Library.Helper;
-using CRM_Finance.Models.EFModel;
+﻿using KTStore.Library.Helper;
+using KTStore.Models.EFModel;
 using ExcelDataReader;
 using Library.Helper;
 using Microsoft.AspNet.Identity;
@@ -11,15 +11,15 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 
-namespace CRM_Finance.MP.Core.BUS.MNG
+namespace KTStore.MP.Core.BUS.MNG
 {
     public class UserServices
     {
-        ManagementWarehouseEntities dbContext = null;
+        KTStoreEntities dbContext = null;
 
         public UserServices()
         {
-            dbContext = new ManagementWarehouseEntities();
+            dbContext = new KTStoreEntities();
         }
         /// <summary>
         /// Thêm mới User

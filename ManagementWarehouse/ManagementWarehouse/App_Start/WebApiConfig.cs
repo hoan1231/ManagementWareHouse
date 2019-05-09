@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace CRM_Finance
+namespace KTStore
 {
     public static class WebApiConfig
     {

@@ -1,4 +1,4 @@
-﻿namespace CRM_Finance.Library.Helper
+﻿namespace KTStore.Library.Helper
 {
     public static class MP_FormatHelper
     {

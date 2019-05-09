@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace CRM_Finance.Library.Lib
+namespace KTStore.Library.Lib
 {
     public class FileUtil
     {

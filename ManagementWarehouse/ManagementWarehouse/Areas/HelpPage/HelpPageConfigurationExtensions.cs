@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using CRM_Finance.Areas.HelpPage.ModelDescriptions;
-using CRM_Finance.Areas.HelpPage.Models;
+using KTStore.Areas.HelpPage.ModelDescriptions;
+using KTStore.Areas.HelpPage.Models;
 
-namespace CRM_Finance.Areas.HelpPage
+namespace KTStore.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

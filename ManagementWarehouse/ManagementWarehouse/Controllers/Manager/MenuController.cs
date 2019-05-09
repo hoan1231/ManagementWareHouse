@@ -1,5 +1,5 @@
-﻿using CRM_Finance.Models.EFModel;
-using CRM_Finance.MP.Core.BUS.MNG;
+﻿using KTStore.Models.EFModel;
+using KTStore.MP.Core.BUS.MNG;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace CRM_Finance.Controllers.Manager
+namespace KTStore.Controllers.Manager
 {
     [MPAuthorize]
     [RoutePrefix("api/Menu")]
@@ -26,7 +26,7 @@ namespace CRM_Finance.Controllers.Manager
         [Route("GetAllMenuParent")]
         public HttpResponseMessage GetAllMenuParent()
         {
-            ManagementWarehouseEntities dbContext = new ManagementWarehouseEntities();
+            KTStoreEntities dbContext = new KTStoreEntities();
             List<MNG_Menu> lst = dbContext.MNG_Menu.Where(x =>
             !x.IsDeleted && (!x.ParentId.HasValue || x.ParentId.Value == Guid.Empty)).ToList<MNG_Menu>();
 

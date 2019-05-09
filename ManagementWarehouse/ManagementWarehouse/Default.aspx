@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CRM_Finance._Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="KTStore._Default" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>ManagementWarehouse</title>
+    <title>KTStore</title>
     <%--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />--%>
     <link href="/crm_manager/CSS/Login.css" rel="stylesheet" />
     <!-- Font Awesome -->
@@ -27,7 +27,7 @@
                 </div>
                 <div class="box-body no-padding">
                     <div class="login-logo">
-                        <a href="#" class="logo"><b>STORE</b></a>
+                        <a href="#" class="logo"><b>KTSTORE</b></a>
                     </div>
                     <div class="frmNewMain">
                         <div class="row">

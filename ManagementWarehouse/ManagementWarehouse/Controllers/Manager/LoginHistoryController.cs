@@ -1,10 +1,10 @@
-﻿using CRM_Finance.Library.Helper;
-using CRM_Finance.MP.Core.BUS.MNG;
-using CRM_Finance.MP.Core.Lib.Helper;
+﻿using KTStore.Library.Helper;
+using KTStore.MP.Core.BUS.MNG;
+using KTStore.MP.Core.Lib.Helper;
 using System;
 using System.Web.Http;
 
-namespace CRM_Finance.Controllers.Manager
+namespace KTStore.Controllers.Manager
 {
     [MPAuthorize]
     [RoutePrefix("api/LoginHis")]
