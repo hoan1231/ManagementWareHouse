@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "WareHouse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Quản lý kho hàng</h3>
+    </div>
+    <div class="box-body">
+
+
+        <div class="row">
+            <div class="col-md-3 col-xs-6 col-lg-3">
+                <div class="form-group">
+                    <label>Tên sản phẩm</label>
+                    <select id="ddlProduct" style="width:100%;" multiple="" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                        <option value="ADE_001">Sửa rửa mặt</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 col-lg-3">
+                <div class="form-group">
+                    <label>Chọn kho hàng</label>
+                    <select class="form-control input-sm select2" style="width:100%;">
+                        <option value="">-- Chọn kho hàng --</option>
+                        <option value="">Kho hàng 1</option>
+                        <option value="">Kho hàng 2</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 col-lg-3">
+                <div class="form-group">
+                    <label>Nhà cung cấp</label>
+                    <select class="form-control input-sm select2" style="width:100%;">
+                        <option value="">-- Chọn nhà cung cấp --</option>
+                        <option value="">Nhà cung cấp 1</option>
+                        <option value="">Nhà cung cấp 2</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button id="btnSearch" class="btn btn-primary btn-sm" type="button">
+                    <i class="fa fa-search"></i>&nbsp; Tìm kiếm
+                </button>
+                <button id="btnExport" type="button" class="btn btn-warning btn-sm">
+                    <i class="fa fa-file-excel-o">&nbsp;Xuất Excel</i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-hover">
+                    <thead class="scroll-table">
+                        <tr class="success">
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Mã sản phẩm</th>
+                            <th>Có thể bán</th>
+                            <th>Tồn kho</th>
+                            <th>Hàng đang về</th>
+                            <th>Hàng đang giao</th>
+                            <th>Hạn xử dụng</th>
+                            <th>Kho hàng</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tr dir-paginate="x in lsCategory | itemsPerPage: 10">
+                        <td>1</td>
+                        <td>Sửa rửa mặt</td>
+                        <td>ADE_0011</td>
+                        <td style="text-align:center">11</td>
+                        <td style="text-align:center">30</td>
+                        <td style="text-align:center">4</td>
+                        <td style="text-align:center">19</td>
+                        <td style="text-align:center">19/06/2019</td>
+                        <td style="text-align:center">Kho hàng 1</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-flat" data-backdrop="false" data-toggle="modal" data-target="#modalType" ng-click="moveCategory(x)">Xem chi tiết sản phẩm</button>
+                        </td>
+                    </tr>
+
+                </table>
+                <div id="modalType" class="modal fade">
+                    <div class="modal-dialog" style="margin-top:6%;">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Chuyển sản phẩm</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Mã hàng
+                                            </label>
+                                            <input type="text" placeholder="Nhập tên loại hàng" value="ADE_0011" class="form-control" name="typename" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Tên hàng
+                                            </label>
+                                            <input type="text" placeholder="Nhập tên loại hàng" value="Sửa rửa mặt" class="form-control" name="typename" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Từ kho hàng</label>
+                                            <input type="text" class="form-control" name="typename" value="Kho hàng 1" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Đến kho hàng</label>
+                                            <select class="form-control input-sm select2" style="width:100%;">
+                                                <option value="">-- Chọn kho hàng --</option>
+                                                <option value="">Kho hàng 2</option>
+                                                <option value="">Kho hàng 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Số lượng
+                                            </label>
+                                            <input type="number" placeholder="Chọn số lượng" min="0" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Mô tả
+                                            </label>
+                                            <input type="text" placeholder="Tag" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>
+                                                Vận chuyển từ
+                                            </label>
+                                            <input type="text" class="form-control" value="Hải Hậu-Nam Định" name="typename" ng-model="addressTo" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>
+                                                Ghi chú đơn hàng
+                                            </label>
+                                            <textarea class="form-control" rows="2" placeholder="Ghi chú" ng-model="Decription"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button id="loadpage" type="button" class="btn btn-primary">Chuyển hàng </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bs-example">
+                    <div class="btn-toolbar text-center">
+                        <div class="btn-group btn-group-sm" id="pageAsign">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

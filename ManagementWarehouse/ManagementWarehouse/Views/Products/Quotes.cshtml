@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Quotes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="/Content/plugins/jQueryUrl/jquery.url.js" type="text/javascript"></script>
+<script src="/Content/plugins/Toastrjs/toastr.min.js"></script>
+<link rel="stylesheet" href="/Content/plugins/Toastrjs/toastr.min.css" />
+<script src="/Content/plugins/datatables/dataTables.select.min.js"></script>
+<script src="/Content/plugins/jQueryEditTable/jquery.editable-1.3.3.js"></script>
+<script src="~/ware_product/Js/Quotes.js"></script>
+<div class="box box-warning">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Báo giá</h3>
+        <span style="float:right;">
+            <a data-toggle="dropdown" class="dropdown-toggle" id="modalAdd" href="#">
+                <i class="fa fa-plus-circle" data-placement="left" title="" data-original-title="Thêm mới"></i>Thêm mới
+            </a>
+        </span>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Agent</label>
+                    <select id="ddlAgent" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <select id="ddlStatus" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Từ ngày </label>
+                    <input type="text" id="txtFrom" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Đến ngày</label>
+                    <input type="text" id="txtTo" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button id="btnSearch" class="btn btn-primary btn-sm" type="button">
+                    <i class="fa fa-search"></i>&nbsp; Tìm kiếm
+                </button>
+                <button id="btnExport" type="button" class="btn btn-warning btn-sm">
+                    <i class="fa fa-file-excel-o">&nbsp;Xuất Excel</i>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <i class="ion ion-clipboard"></i>
+                <h3 class="box-title">Kết quả tìm kiếm</h3>
+            </div>
+            <div class="box-body">
+                <div style="overflow: auto">
+                    <table id="tblQuote" class="table table-bordered table-hover">
+                        <thead class="scroll-table">
+                            <tr class="success">
+                                <th>STT</th>
+                                <th>Ngày</th>
+                                <th>Số tham chiếu</th>
+                                <th>Người bán hàng</th>
+                                <th>Khách hàng</th>
+                                <th>Nhà cung cấp</th>
+                                <th>Tổng</th>
+                                <th>Trạng thái</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbdQuote">
+                            <tr>
+                                <td>0</td>
+                                <td>Ảnh</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="text-center">
+                                        <div class="btn-group text-left">
+                                            <button type="button" class="btn btn-default btn-xs btn-primary dropdown-toggle" data-toggle="dropdown">Tác vụ <span class="caret"></span></button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -282,6 +282,9 @@
     <Compile Include="Controllers\Manager\UsersController.cs" />
     <Compile Include="Controllers\PagesControl\ErrController.cs" />
     <Compile Include="Controllers\PagesControl\ImportGoodsController.cs" />
+    <Compile Include="Controllers\PagesControl\ReportsController.cs" />
+    <Compile Include="Controllers\PagesControl\WarehouseController.cs" />
+    <Compile Include="Controllers\PagesControl\UserController.cs" />
     <Compile Include="Controllers\PagesControl\SellGoodsController.cs" />
     <Compile Include="Controllers\PagesControl\ProductsController.cs" />
     <Compile Include="Controllers\PagesControl\MNGController.cs" />
@@ -2273,8 +2276,18 @@
     <Content Include="Scripts\knockout-3.4.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SQLTicket.sql" />
+    <Content Include="warehouse\Js\WareHouse.js" />
     <Content Include="ware_import\Js\ListOrderImport.js" />
     <Content Include="ware_import\Js\TransferWarehouse.js" />
+    <Content Include="ware_product\Js\Promotion.js" />
+    <Content Include="warehouse\Js\Tranfer.js" />
+    <Content Include="warehouse\Js\ReturnProduct.js" />
+    <Content Include="ware_report\Js\ReportAgent.js" />
+    <Content Include="ware_report\Js\ReportProductvity.js" />
+    <Content Include="ware_user\Js\Customer.js" />
+    <Content Include="ware_user\Js\Supplier.js" />
+    <Content Include="ware_product\Js\Quotes.js" />
+    <Content Include="ware_product\Products.js" />
     <Content Include="ware_sell\Js\AddOrderSell.js" />
     <Content Include="ware_sell\Js\Promotion.js" />
     <Content Include="ware_sell\Js\ListOrderSell.js" />
@@ -2313,7 +2326,7 @@
     <Content Include="Views\MNG\UserInfor.cshtml" />
     <Content Include="SqlTicket.bat" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Products\Sales.cshtml" />
+    <Content Include="Views\Products\Quotes.cshtml" />
     <Content Include="Views\ImportGoods\ListOrderImport.cshtml" />
     <Content Include="Views\ImportGoods\ListExpenses.cshtml" />
     <Content Include="Views\ImportGoods\TransferWarehouse.cshtml" />
@@ -2326,6 +2339,21 @@
     <Content Include="Views\Products\StoctCounts.cshtml" />
     <Content Include="Views\ImportGoods\AddOrderImport.cshtml" />
     <Content Include="Views\SellGoods\AddOrderSell.cshtml" />
+    <Content Include="Views\User\Customer.cshtml" />
+    <Content Include="Views\User\ListSupplier.cshtml" />
+    <Content Include="Views\Products\Promotion.cshtml" />
+    <Content Include="Views\Warehouse\Tranfer.cshtml" />
+    <Content Include="Views\Warehouse\ReturnProduct.cshtml" />
+    <Content Include="Views\Warehouse\WareHouse.cshtml" />
+    <Content Include="Views\Reports\TurnoverByDay.cshtml" />
+    <Content Include="Views\Reports\TurnoverByMonth.cshtml" />
+    <Content Include="Views\Reports\CustomerStatistics.cshtml" />
+    <Content Include="Views\Reports\AgentStatistics.cshtml" />
+    <Content Include="Views\Reports\SupplierStatistics.cshtml" />
+    <Content Include="Views\Reports\ReportProduct.cshtml" />
+    <Content Include="Views\Reports\ProfitAndCost.cshtml" />
+    <Content Include="Views\Reports\ReportSalesByBranch.cshtml" />
+    <Content Include="Views\Reports\InventoryChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2334,11 +2362,12 @@
     <Folder Include="MP.Core\Lib\Extension\" />
     <Folder Include="MP.Core\ModelExt\Products\" />
     <Folder Include="MP.Core\ModelExt\Reports\" />
+    <Folder Include="warehouse\CSS\" />
     <Folder Include="ware_import\CSS\" />
     <Folder Include="ware_product\CSS\" />
     <Folder Include="ware_report\CSS\" />
-    <Folder Include="ware_report\Js\" />
     <Folder Include="ware_sell\CSS\" />
+    <Folder Include="ware_user\CSS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

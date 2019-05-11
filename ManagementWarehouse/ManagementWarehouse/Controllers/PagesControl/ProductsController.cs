@@ -22,9 +22,13 @@ namespace KTStore.Controllers
         {
             return View("StoctCounts");
         }
-        public ActionResult Sales()
+        public ActionResult Quotes()
         {
-            return View("Sales");
+            return View("Quotes");
+        }
+        public ActionResult Promotion()
+        {
+            return View("Promotion");
         }
     }
 }
