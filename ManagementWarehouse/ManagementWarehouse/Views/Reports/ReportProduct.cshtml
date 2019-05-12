@@ -4,5 +4,81 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ReportProduct</h2>
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Báo cáo sản phẩm</h3>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Kho hàng</label>
+                    <select id="ddl" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Sản phẩm</label>
+                    <select id="ddlProduct" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Từ ngày </label>
+                    <input type="text" id="txtFrom" value="05/05/2019" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Đến ngày</label>
+                    <input type="text" id="txtTo" value="05/10/2019" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" style="width: 80px" id="btnSearch">Tìm kiếm</button>
+                    <button class="btn btn-warning btn-sm" style="width: 80px" id="btnExcel">Xuất excel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblReport" class="table table-bordered table-hover">
+                    <thead class="scroll-table">
+                        <tr class="success">
+                            <th>STT</th>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Nhập hàng</th>
+                            <th>Đã bán</th>
+                            <th>Lợi nhuận/Chi phí</th>
+                            <th>Stock in hand</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdReport">
+                        <tr>
+                            <td>1</td>
+                            <td>ADE_001</td>
+                            <td>Sửa rửa mặt</td>
+                            <td>50</td>
+                            <td>23(3690000)</td>
+                            <td>1250000</td>
+                            <td></td> 
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 

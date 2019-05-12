@@ -13,71 +13,103 @@
 <link rel="stylesheet" href="/Content/dist/checkstyle/build.css" />
 
 
-<div class="nav-tabs-custom">
-    <ul class="nav nav-tabs" style="float:right;">
-        <li class="active">
 
-            <a href="#manager" data-toggle="tab">
-                <ul class="btn-tasks">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon fa fa-tasks tip" data-placement="left" title="" data-original-title="Tác vụ"></i>Công cụ
-                        </a>
-                        <ul class="dropdown-menu pull-right tasks-menus">
-                            <li>
-                                <a id="modalAdd" href="#">
-                                    <i class="fa fa-plus-circle"></i> Thêm mới
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="btnExport">
-                                    <i class="fa fa-file-excel-o"></i> Xuất ra file Excel
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+
+<div class="box box-warning">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Chi phí</h3>
+        <span style="float:right;">
+            <a data-toggle="dropdown" class="dropdown-toggle" id="modalAdd" href="#">
+                <i class="fa fa-plus-circle" data-placement="left" title="" data-original-title="Thêm mới"></i>Thêm mới
             </a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div class="chart tab-pane active" id="manager">
-            <div class="box">
-                <div class="box-header with-border">
-                    <i class="ion ion-clipboard"></i>
-                    <h3 class="box-title">Danh sách chi phí</h3>
-                    <table id="tblExpenses" class="table table-bordered table-hover">
-                        <thead class="scroll-table">
-                            <tr class="success">
-                                <th>STT</th>
-                                <th>Ngày</th>
-                                <th>Số tham chiếu</th>
-                                <th>Danh mục</th>
-                                <th>Số lượng</th>
-                                <th>Người tạo</th>
-                                <th>Ngày tạo</th>
-                                <th>Ghi chú</th>
-                                <th>Tác vụ</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbdExpenses">
-                            <tr>
-                                <td>0</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><i class="fa fa-edit fa-lg text-info mp-pointer-st" tooltip="Sửa"></i><i style="margin-left:5px;" class="fa fa-trash-o fa-lg text-red mp-pointer-st" tooltip="Xóa"></i></td>
-
-</tbody>
-                    </table>
+        </span>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Danh mục</label>
+                    <select id="ddlCustomer" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Nhân viên</label>
+                    <select id="ddlCustomer" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Từ ngày </label>
+                    <input type="text" id="txtFrom" value="05/05/2019" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Đến ngày</label>
+                    <input type="text" id="txtTo" value="05/10/2019" class="form-control input-datepicker input-sm">
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <button id="btnSearch" class="btn btn-primary btn-sm" type="button">
+                    <i class="fa fa-search"></i>&nbsp; Tìm kiếm
+                </button>
+                <button id="btnExport" type="button" class="btn btn-warning btn-sm">
+                    <i class="fa fa-file-excel-o">&nbsp;Xuất Excel</i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div class="box box-warning">
+        <div class="box-header with-border">
+            <i class="ion ion-clipboard"></i>
+            <h3 class="box-title">Kết quả tìm kiếm</h3>
+        </div>
+        <div class="box-body">
+            <div style="overflow: auto">
+                <table id="tblExpenses" class="table table-bordered table-hover">
+                    <thead class="scroll-table">
+                        <tr class="success">
+                            <th>STT</th>
+                            <th>Ngày</th>
+                            <th>Số tham chiếu</th>
+                            <th>Danh mục</th>
+                            <th>Số lượng</th>
+                            <th>Người tạo</th>
+                            <th>Ngày tạo</th>
+                            <th>Ghi chú</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdExpenses">
+                        <tr>
+                            <td>0</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-edit fa-lg text-info mp-pointer-st" tooltip="Sửa"></i><i style="margin-left:5px;" class="fa fa-trash-o fa-lg text-red mp-pointer-st" tooltip="Xóa"></i></td>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 

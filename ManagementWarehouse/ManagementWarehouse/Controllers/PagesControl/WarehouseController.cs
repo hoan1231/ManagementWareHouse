@@ -14,6 +14,10 @@ namespace KTStore.Controllers
         {
             return View("ReturnProduct");
         }
+        public ActionResult AddReturnProduct()
+        {
+            return View("AddReturnProduct");
+        }
         public ActionResult WareHouse()
         {
             return View("WareHouse");

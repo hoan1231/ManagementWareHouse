@@ -2354,6 +2354,8 @@
     <Content Include="Views\Reports\ProfitAndCost.cshtml" />
     <Content Include="Views\Reports\ReportSalesByBranch.cshtml" />
     <Content Include="Views\Reports\InventoryChart.cshtml" />
+    <Content Include="Views\Warehouse\AddReturnProduct.cshtml" />
+    <Content Include="Views\Products\AddQuotes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

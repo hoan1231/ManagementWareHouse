@@ -12,92 +12,127 @@
 <link rel="stylesheet" href="/Content/dist/checkstyle/build.css" />
 
 
-<div class="nav-tabs-custom">
-    <ul class="nav nav-tabs" style="float:right;">
-        <li class="active">
 
-            <a href="#manager" data-toggle="tab">
-                <ul class="btn-tasks">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon fa fa-tasks tip" data-placement="left" title="" data-original-title="Tác vụ"></i>Công cụ
-                        </a>
-                        <ul class="dropdown-menu pull-right tasks-menus" role="menu" aria-labelledby="dLabel">
-                            <li>
-                                <a id="modalAdd" href="https://localhost:44303/SellGoods/AddOrderSell" target="_blank">
-                                    <i class="fa fa-plus-circle"></i> Thêm đơn hàng
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="btnExport">
-                                    <i class="fa fa-file-excel-o"></i> Xuất ra file Excel
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+<div class="box box-warning">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Danh sách đơn hàng đã bán</h3>
+        <span style="float:right;">
+            <a id="modalAdd" href="https://localhost:44303/SellGoods/AddOrderSell" target="_blank">
+                <i class="fa fa-plus-circle"></i> Thêm đơn hàng
             </a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div class="chart tab-pane active" id="manager">
-            <div class="box">
-                <div class="box-header with-border">
-                    <i class="ion ion-clipboard"></i>
-                    <h3 class="box-title">Danh sách đơn bán hàng</h3>
-                    <table id="tblOrderSell" class="table table-bordered table-hover">
-                        <thead class="scroll-table">
-                            <tr class="success">
-                                <th>STT</th>
-                                <th>Ngày</th>
-                                <th>Số tham chiếu</th>
-                                <th>Người bán hàng</th>
-                                <th>Khách hàng</th>
-                                <th>Trạng thái đơn hàng</th>
-                                <th>Tổng cộng</th>
-                                <th>Đã thanh toán</th>
-                                <th>Dư nợ</th>
-                                <th>Trạng thái thanh toán</th>
-                                <th>Tác vụ</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbdOrderSell">
-                            <tr>
-                                <td>1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <div class="text-center">
-                                        <div class="btn-group text-left">
-                                            <button type="button" class="btn btn-default btn-xs btn-primary dropdown-toggle" data-toggle="dropdown">Tác vụ <span class="caret"></span></button>
-                                            <ul class="dropdown-menu pull-right" role="menu">
-                                                <li><a href="#"><i class="fa fa-file-text-o"></i> Chi tiết sản phẩm</a></li>
-                                                <li><a href="#"><i class="fa fa-plus-square"></i> Sản phẩm trùng lặp</a></li>
-                                                <li><a href="#"><i class="fa fa-edit"></i> Sửa sản phẩm</a></li>
-                                                <li><a href="#" data-type="image" data-toggle="lightbox"><i class="fa fa-file-photo-o"></i> Xem ảnh</a></li>
-                                                <li><a href="#"><i class="fa fa-print"></i> In mã vạch/nhãn</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#"><i class="fa fa-trash-o"></i> Xóa sản phẩm</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        </span>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Kho hàng</label>
+                    <select id="ddlCustomer" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Khách hàng</label>
+                    <select id="ddlCustomer" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Nhân viên</label>
+                    <select id="ddlAgent" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Từ ngày </label>
+                    <input type="text" id="txtFrom" value="05/05/2019" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Đến ngày</label>
+                    <input type="text" id="txtTo" value="05/10/2019" class="form-control input-datepicker input-sm">
                 </div>
             </div>
         </div>
     </div>
-    </hr>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <button id="btnSearch" class="btn btn-primary btn-sm" type="button">
+                    <i class="fa fa-search"></i>&nbsp; Tìm kiếm
+                </button>
+                <button id="btnExport" type="button" class="btn btn-warning btn-sm">
+                    <i class="fa fa-file-excel-o">&nbsp;Xuất Excel</i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div class="box box-warning">
+        <div class="box-header with-border">
+            <i class="ion ion-clipboard"></i>
+            <h3 class="box-title">Kết quả tìm kiếm</h3>
+        </div>
+        <div class="box-body">
+            <div style="overflow: auto">
+                <table id="tblOrderSell" class="table table-bordered table-hover">
+                    <thead class="scroll-table">
+                        <tr class="success">
+                            <th>STT</th>
+                            <th>Ngày</th>
+                            <th>Số tham chiếu</th>
+                            <th>Người bán hàng</th>
+                            <th>Khách hàng</th>
+                            <th>Trạng thái đơn hàng</th>
+                            <th>Tổng cộng</th>
+                            <th>Đã thanh toán</th>
+                            <th>Dư nợ</th>
+                            <th>Trạng thái thanh toán</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdOrderSell">
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="text-center">
+                                    <div class="btn-group text-left">
+                                        <button type="button" class="btn btn-default btn-xs btn-primary dropdown-toggle" data-toggle="dropdown">Tác vụ <span class="caret"></span></button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li><a href="#"><i class="fa fa-file-text-o"></i> Chi tiết sản phẩm</a></li>
+                                            <li><a href="#"><i class="fa fa-edit"></i> Sửa sản phẩm</a></li>   
+                                            <li><a href="#"><i class="fa fa-trash-o"></i> Xóa sản phẩm</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 
 

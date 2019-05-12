@@ -26,6 +26,10 @@ namespace KTStore.Controllers
         {
             return View("Quotes");
         }
+        public ActionResult AddQuotes()
+        {
+            return View("AddQuotes");
+        }
         public ActionResult Promotion()
         {
             return View("Promotion");

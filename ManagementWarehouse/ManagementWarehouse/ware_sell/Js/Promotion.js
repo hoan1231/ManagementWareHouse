@@ -43,24 +43,24 @@ function bindEventOpenAddPromotion() {
         var itemCfAddPromotion = $.confirm({
             title: '<i class="fa fa-bank text-green"></i> Thêm thẻ giảm giá',
             type: 'blue',
-            columnClass: 'x-large',
+            columnClass: 'medium',
             content: '' +
-                '<div class="row no-margin"><div class="col-lg-3 col-md-4 col-sm-12">' +
+                '<div class="row no-margin"><div class="col-lg-6 col-md-6 col-sm-12">' +
                 '<div class="form-group"><label>Số thẻ</label>' +
                 '<input type="text" id="txtCardNumber" placeholder="Nhập số thẻ" class="form-control input-sm" /></div>' +
-                '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
+                '</div><div class="col-lg-6 col-md-6 col-sm-12">' +
                 '<div class="form-group"><label>Giá trị</label>' +
                 '<input type="text" id="txtValue" placeholder="Nhập giá trị" class="form-control input-sm" /></div>' +
-                '</div><div class="col-lg-3 col-md-4 col-sm-12"><span class="checkbox checkbox-success styleCheckBoxMenu">' +
-                '<input id="chkExpense" class= "styled" type="checkbox">' +
-                    '<label for="chkExpense">Thêm chi phí</label>' +
-            '</span></div><div class="col-lg-3 col-md-4 col-sm-12">' +
+                '</div><div class="col-lg-6 col-md-6 col-sm-12">' +
                 '<div class="form-group"><label>Khách hàng</label>' +
                 '<select id="ddlCustomer" placeholder="Chọn khách hàng" class="form-control input-sm select2" /></select></div>' +
-                '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
+                '</div><div class="col-lg-6 col-md-6 col-sm-12">' +
                 '<div class="form-group"><label>Ngày hết hạn</label>' +
                 '<input type="text" placeholder="dd/MM/yyyy" class="form-control input-sm" /></div>' +
-                '</div></div></div></div>',
+                '</div><div class="col-lg-6 col-md-6 col-sm-12"><span class="checkbox checkbox-success styleCheckBoxMenu">' +
+                '<input id="chkExpense" class= "styled" type="checkbox">' +
+                '<label for="chkExpense">Thêm chi phí</label>' +
+            '</span></div></div></div></div>',
             buttons: {
                 formSubmit: {
                     text: 'Lưu thông tin',

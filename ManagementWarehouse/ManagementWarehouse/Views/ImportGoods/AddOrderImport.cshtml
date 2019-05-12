@@ -39,7 +39,7 @@
             <div class="col-md-3 col-xs-6 col-lg-3">
                 <div class="form-group">
                     <label>Ngày nhập</label>
-                    <input type="text" class="form-control pull-right input-sm" placeholder="dd/mm/yyyy">
+                    <input type="text" class="form-control input-datepicker input-sm" placeholder="dd/mm/yyyy">
                 </div>
             </div>
 
@@ -102,17 +102,18 @@
                             <th style="width:4%;"></th>
                         </tr>
                     </thead>
-                    <tr ng-repeat="x in lstCategory">
-                        <td>{{x.Category.CatCode}}</td>
-                        <td>{{x.Category.CatName}}</td>
+                    <tr>
+                        <td>ADE_001</td>
+                        <td>Sửa rửa mặt</td>
                         <td>
-                            <input type="number" class="form-control form-control-input-popup col" ng-model="x.SoLuong" ng-change="changePrice()">
+                            <input type="number" class="form-control form-control-input-popup col" value="3">
                         </td>
                         <td>
-                            <input type="number" class="form-control form-control-input-popup col-2" ng-model="x.Category.PurchasePrice" ng-change="changePrice()">
+                            <input type="number" class="form-control form-control-input-popup col-2" value="150000">
                         </td>
-                        <td><input type="number" class="form-control form-control-input-popup col" ng-model="x.Thue" ng-change="changePrice()"></td>
-                        <td>{{x.SoLuong*x.Category.PurchasePrice}}</td>
+                      
+                        <td><input type="number" class="form-control form-control-input-popup col">0</td>
+                        <td>450000</td>
                         <td>
                             <span ng-click="deleteCategory($index)"><i class="fa fa-fw fa-trash-o"></i></span>
                         </td>

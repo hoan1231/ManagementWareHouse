@@ -3,6 +3,74 @@
     ViewBag.Title = "AgentStatistics";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Thống kê trạng thái nhân viên</h3>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Nhân viên</label>
+                    <select id="ddl" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Trạng thái</label> 
+                    <select id="ddl" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                        <option value="">Nghỉ trưa</option>
+                        <option value="">Chuyển ca</option>
+                        <option value="">Đang sẵn sàng</option>
+                        <option value="">Go home</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Từ ngày </label>
+                    <input type="text" id="txtFrom" value="05/05/2019" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Đến ngày</label>
+                    <input type="text" id="txtTo" value="05/10/2019" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" style="width: 80px" id="btnSearch">Tìm kiếm</button>
+                    <button class="btn btn-warning btn-sm" style="width: 80px" id="btnExcel">Xuất excel</button>
+                </div>
+            </div>
+        </div>
 
-<h2>AgentStatistics</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblReport" class="table table-bordered table-hover">
+                    <thead class="scroll-table">
+                        <tr class="success">
+                            <th>STT</th>
+                            <th>Tên nhân viên</th>
+                            <th>Số điện thoại</th>
+                            <th>Trạng thái</th>
+                            <th>Thời gian hoạt động từ</th>
+                            <th>Thời gian hoạt động đến</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdReport"></tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
