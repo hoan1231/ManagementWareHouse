@@ -2,11 +2,12 @@
     /**
      * Sự kiện mở popup thêm mới điều chỉnh
      * */
-    bindEventOpenAddAjustment();
+    bindEventOpenAddWarehouse();
     /**
      * Lấy tất cả danh sách điều chỉnh
      * */
-    GetAllAjustment();
+    GetAllWarehouse();
+    bindEventOpenDetailProduct();
 
   //  Refresh();
 
@@ -17,13 +18,13 @@
 /**
  * Lấy tất cả danh sách điều chỉnh
  * */
-var tblAjustment;
-function GetAllAjustment() {
-    if (tblAjustment) {
-        tblAjustment.destroy();
-        $('#tbdAjustment').empty();
+var tblWarehouse;
+function GetAllWarehouse() {
+    if (tblWarehouse) {
+        tblWarehouse.destroy();
+        $('#tbdWarehouse').empty();
     }
-          tblAjustment = $('table#tblAjustment').DataTable({
+          tblWarehouse = $('table#tblWarehouse').DataTable({
                 "paging": true,
                 "lengthChange": false,
                 "searching": true,
@@ -37,10 +38,10 @@ function GetAllAjustment() {
 /**
  * Sự kiện mở popup thêm mới điều chỉnh
  * */
-function bindEventOpenAddAjustment() {
+function bindEventOpenAddWarehouse() {
     $("#modalAdd").click(function (e) {
         e.preventDefault();
-        var itemCfAddAjustment = $.confirm({
+        var itemCfAddWarehouse = $.confirm({
             title: '<i class="fa fa-bank text-green"></i> Thêm mới điều chỉnh',
             type: 'blue',
             columnClass: 'x-large',
@@ -50,7 +51,7 @@ function bindEventOpenAddAjustment() {
                 '<input type="text" id="txtContactPhone" placeholder="Nhập ngày" class="form-control input-sm" /></div>' +
                 '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
                 '<div class="form-group"><label>Số tham chiếu</label>' +
-                '<input type="text" id="txtNameAjustment" placeholder="Nhập số tham chiếu" class="form-control input-sm" /></div>' +
+                '<input type="text" id="txtNameWarehouse" placeholder="Nhập số tham chiếu" class="form-control input-sm" /></div>' +
                 '</div><div class="col-lg-3 col-md-4 col-sm-12">' +
                 '<div class="form-group"><label>Kho hàng</label>' +
                 '<select id="ddlType" placeholder="Chọn kho hàng" class="form-control input-sm select2"><option value="">--Chọn--</option></select></div>' +
@@ -72,7 +73,7 @@ function bindEventOpenAddAjustment() {
             buttons: {
                 formSubmit: {
                     text: 'Gửi',
-                    btnClass: 'btn-blue btn-add-Ajustment',
+                    btnClass: 'btn-blue btn-add-Warehouse',
                     action: function () {
                         return false;
                     }
@@ -98,9 +99,9 @@ function bindEventOpenAddAjustment() {
 
 
 
-    //$("#AddAjustment").click(function () {
+    //$("#AddWarehouse").click(function () {
     //    var compa = new Object();
-    //    compa.Ajustment = $("input[id$='txtNameAjustment']").val();
+    //    compa.Warehouse = $("input[id$='txtNameWarehouse']").val();
     //    compa.IPServerDB = $("input[id$='txtIPServerName']").val();
     //    compa.ServerNameDB = $("input[id$='txtServerNameDB']").val();
     //    compa.UserNameDB = $("input[id$='txtNameLoginDB']").val();
@@ -111,7 +112,7 @@ function bindEventOpenAddAjustment() {
     //    compa.Icon = $("input[id$='txtIcon']").val();
     //    $.ajax({
     //        type: "POST",
-    //        url: "/api/Ajustment/AddAjustment",
+    //        url: "/api/Warehouse/AddWarehouse",
     //        dataType: "json",
     //        data: compa
     //        , success: function (msg) {
@@ -120,7 +121,7 @@ function bindEventOpenAddAjustment() {
     //                alert("thêm mới thành công");
     //            }
     //            Refresh();
-    //            GetAllAjustment();
+    //            GetAllWarehouse();
     //        }
     //        , complete: function () {
     //        }
@@ -132,64 +133,57 @@ function bindEventOpenAddAjustment() {
 
 }
 
-/**
- * Kiểm tra nhập liệu thông tin điều chỉnh
- * @param {any} item Ajustment
- * @returns {any} true/false
- */
-function validateInputAjustment(item) {
-    if (item.AjustmentCode && item.AjustmentCode.length !== 5) {
-        $.alert({
-            title: 'Cảnh báo!',
-            type: 'red',
-            icon: 'fa fa-warning',
-            content: '<code>Mã định danh điều chỉnh yêu cầu 5 ký tự.</code>'
-        });
-        return false;
-    }
-    if (!item.AjustmentName || !item.DBServer || !item.AjustmentCode ||
-        !item.UserNumber || !item.Note || !item.VoiceServer || !item.ContactPhone ||
-        !item.ContactName || item.ContactEmail) {
-        $.alert({
-            title: 'Cảnh báo!',
-            type: 'red',
-            icon: 'fa fa-warning',
-            content: '<code>Yêu cầu nhập đầy đủ thông tin.</code>'
-        });
-        return false;
-    }
-    return true;
-}
+function bindEventOpenDetailProduct() {
+    $(".modalDetail").click(function (e) {
+        e.preventDefault();
+        var itemCfAddProduct = $.confirm({
+            title: '<i class="fa fa-bank text-green"></i> Chi tiết sản phẩm',
+            type: 'blue',
+            columnClass: 'x-large',
+            content: '' +
+                '<div class="row"><div class="col-ld-5 col-md-5 col-sm 12"><div class="row"> <img src="/Content/dist/img/anhdefault.png" alt="Sữa rửa mặt 1" class= "img-responsive img-thumbnail">' +
+                ' <div class="form-group" style="margin-left:3%;"><table class="table table-bordered table-hover"> <tr class="success"><th>Tên kho hàng</th><th>Số lượng kho hàng</th></tr><tr><td>Kho hàng 1</td><td>120</td></tr></table></div></div></div> <div class="col-ld-7 col-md-7 col-sm 12"><div class="row no-margin">' +
+                '<table class="table table-borderless table-striped table-right-left"><tbody>' +
+                '<tr> <td colspan="2" style="background-color:#FFF;"></td></tr>' +
+                '<tr><td style = "width:30%;"> Barcode &amp; QRcode</td > ' +
+                '<td style = "width:70%;" > <img src="/Content/dist/img/code.png" alt="s001" class="bcimg">' +
+                '<img src="/Content/dist/img/qr_code.jpeg" class="qrimg" style="width: 18%;"></td>' +
+                '</tr>' +
+                '<tr> <td>Loại</td> <td>Tiêu chuẩn</td></tr > ' +
+                '<tr> <td>Tên</td> <td>Sữa rửa mặt 1</td></tr > ' +
+                '<tr><td>Mã</td><td>s001</td></tr>' +
+                '<tr><td>brand</td><td></td></tr>' +
+                '<tr><td>Danh mục</td><td>Category 1</td></tr>' +
+                '<tr><td>Nhãn hiệu</td><td>nivea</td></tr>' +
+                '<tr><td>Đơn vị tính</td><td>Đơn vị 1 (01)</td></tr>' +
+                '<tr><td>Giá</td><td>195000</td></tr>' +
+                '<tr><td>Thuế suất</td><td>No Tax</td></tr>' +
+                '<tr><td>Phương thức tính thuế</td><td>Không bao gồm</td></tr>' +
+                '<tr><td>Số lượng nhập cảnh báo</td><td>25</td></tr>' +
+                '</tbody></table>' +
+                '</div></div></div></div></div>',
+            buttons: {
+                formSubmit: {
+                    text: 'Sửa',
+                    btnClass: 'btn-blue btn-add-Product',
+                    action: function () {
 
-/**
- * Lấy các thông tin điều chỉnh nhập vào
- * @param {any} $control item
- * @returns {any} item Ajustment
- */
-function getAjustmentInput($control) {
-    var compa = new Object();
-    compa.AjustmentName = $control.$content.find('#txtNameAjustment').val();
-    compa.AjustmentEmail = $control.$content.find('#txtContactEmail').val();
-    compa.ContactName = $control.$content.find('#txtContactName').val();
-    compa.ContactPhone = $control.$content.find('#txtContactPhone').val();
-    compa.DBServer = $control.$content.find('#txtIPServerName').val();
-    compa.AjustmentCode = $control.$content.find('#txtAjustmentCode').val().toUpperCase();
-    compa.UserNumber = $control.$content.find('#txtNumberAgent').val();
-    compa.Status = $control.$content.find('#chkStatus').is(":checked");
-    compa.Note = $control.$content.find('#txtNote').val();
-    compa.VoiceServer = $control.$content.find('#txtVoiceServer').val();
-    return compa;
-}
-
-/**
- * Định dạng date time dd/MM/yyyy HH:mm:ss
- * @param {any} date item
- * @return {any} item dd/MM/yyyy HH:mm:ss
- */
-function formatDate(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ':' + date.getSeconds();
-    return date.getDate() + "/" + ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear() + "  " + strTime;
+                        return false;
+                    }
+                },
+                cancel: function () {
+                    text: 'Đóng'
+                }
+            },
+            onContentReady: function () {
+                // bind to events
+                var jc = this;
+                this.$content.find('form').on('submit', function (e) {
+                    // if the user submits the form by pressing enter in the field.
+                    e.preventDefault();
+                    jc.$$formSubmit.trigger('click'); // reference the button and click it
+                });
+            }
+        });
+    });
 }

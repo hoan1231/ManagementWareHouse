@@ -79,5 +79,11 @@ namespace KTStore.Controllers
         {
             return View("ForgotPassword");
         }
+        public ActionResult Tax()
+        {
+            ViewData["fromDate"] = DateTime.Now.AddDays(-7).ToString(MP_FormatHelper.Format103);
+            ViewData["toDate"] = DateTime.Now.ToString(MP_FormatHelper.Format103);
+            return View("Tax");
+        }
     }
 }

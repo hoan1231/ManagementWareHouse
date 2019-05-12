@@ -2,7 +2,136 @@
 @{
     ViewBag.Title = "TurnoverByDay";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var fromDate = ViewData["fromDate"];
+    var toDate = ViewData["toDate"];
 }
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Báo cáo doanh số theo ngày</h3>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Kho hàng</label>
+                    <select id="ddl" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Sản phẩm</label>
+                    <select id="ddlProduct" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Từ ngày </label>
+                    <input type="text" id="txtFrom" value="@fromDate" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Đến ngày </label>
+                    <input type="text" id="txtTo" value="@toDate" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" style="width: 80px" id="btnSearch">Tìm kiếm</button>
+                    <button class="btn btn-warning btn-sm" style="width: 80px" id="btnExcel">Xuất excel</button>
+                </div>
+            </div>
+        </div>
 
-<h2>TurnoverByDay</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <table border="0" cellpadding="0" cellspacing="0" class="table table-bordered dfTable">
+
+                    <tbody>
+                        <tr class="success">
+                            <th><a href="#">&lt;&lt;</a></th>
+                            <th colspan="5" id="month_year">Tháng năm&nbsp;2019</th>
+                            <th><a href="#">&gt;&gt;</a></th>
+                        </tr>
+
+                        <tr>
+                            <td class="cl_wday">Chủ nhật</td>
+                            <td class="cl_wday">Thứ hai</td>
+                            <td class="cl_wday">Thứ ba</td>
+                            <td class="cl_wday">Thứ tư</td>
+                            <td class="cl_wday">Thứ năm</td>
+                            <td class="cl_wday">Thứ sáu</td>
+                            <td class="cl_wday">Thứ bảy</td>
+                        </tr>
+
+                        <tr class="days">
+                            <td class="day">&nbsp;</td>
+                            <td class="day">&nbsp;</td>
+                            <td class="day">&nbsp;</td>
+                            <td class="day"><div class="day_num">1</div></td>
+                            <td class="day"><div class="day_num">2</div></td>
+                            <td class="day"><div class="day_num">3</div></td>
+                            <td class="day"><div class="day_num">4</div></td>
+                        </tr>
+
+                        <tr class="days">
+                            <td class="day">
+                                <div class="day_num">5</div>
+                                <div class="content"><table class="table table-bordered table-hover table-striped table-condensed data" style="margin:0;"><tbody><tr><td>Chiết khấu</td><td>0.00</td></tr><tr><td>Phí vận chuyển</td><td>0.00</td></tr><tr><td>Thuế sản phẩm</td><td>0.00</td></tr><tr><td>Thuế mua hàng</td><td>0.00</td></tr><tr><td>Tổng</td><td>binhnc1,620,000.00</td></tr></tbody></table></div>
+                            </td>
+                            <td class="day">
+                                <div class="day_num">6</div>
+                                <div class="content"><table class="table table-bordered table-hover table-striped table-condensed data" style="margin:0;"><tbody><tr><td>Chiết khấu</td><td>binhnc20.00</td></tr><tr><td>Phí vận chuyển</td><td>binhnc20.00</td></tr><tr><td>Thuế sản phẩm</td><td>0.00</td></tr><tr><td>Thuế mua hàng</td><td>binhnc261,798.40</td></tr><tr><td>Tổng</td><td>binhnc4,051,798.40</td></tr></tbody></table></div>
+                            </td>
+                            <td class="day"><div class="day_num">7</div></td>
+                            <td class="day"><div class="day_num">8</div></td>
+                            <td class="day"><div class="day_num">9</div></td>
+                            <td class="day"><div class="day_num">10</div></td>
+                            <td class="day"><div class="day_num">11</div></td>
+                        </tr>
+
+                        <tr class="days">
+                            <td class="day"><div class="day_num highlight">12</div></td>
+                            <td class="day"><div class="day_num">13</div></td>
+                            <td class="day"><div class="day_num">14</div></td>
+                            <td class="day"><div class="day_num">15</div></td>
+                            <td class="day"><div class="day_num">16</div></td>
+                            <td class="day"><div class="day_num">17</div></td>
+                            <td class="day"><div class="day_num">18</div></td>
+                        </tr>
+
+                        <tr class="days">
+                            <td class="day"><div class="day_num">19</div></td>
+                            <td class="day"><div class="day_num">20</div></td>
+                            <td class="day"><div class="day_num">21</div></td>
+                            <td class="day"><div class="day_num">22</div></td>
+                            <td class="day"><div class="day_num">23</div></td>
+                            <td class="day"><div class="day_num">24</div></td>
+                            <td class="day"><div class="day_num">25</div></td>
+                        </tr>
+
+                        <tr class="days">
+                            <td class="day"><div class="day_num">26</div></td>
+                            <td class="day"><div class="day_num">27</div></td>
+                            <td class="day"><div class="day_num">28</div></td>
+                            <td class="day"><div class="day_num">29</div></td>
+                            <td class="day"><div class="day_num">30</div></td>
+                            <td class="day"><div class="day_num">31</div></td>
+                            <td class="day">&nbsp;</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
 

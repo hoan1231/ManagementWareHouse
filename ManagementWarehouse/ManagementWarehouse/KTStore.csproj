@@ -2032,6 +2032,7 @@
     <Content Include="crm_manager\Js\ForgotPassword.js" />
     <Content Include="crm_manager\Js\jquery.mptelecom.js" />
     <Content Include="crm_manager\Js\ListMember.js" />
+    <Content Include="crm_manager\Js\Tax.js" />
     <Content Include="crm_manager\Js\TypeCampaign.js" />
     <Content Include="crm_manager\Js\User.js" />
     <Content Include="crm_manager\Js\LoginHistory.js" />
@@ -2356,6 +2357,7 @@
     <Content Include="Views\Reports\InventoryChart.cshtml" />
     <Content Include="Views\Warehouse\AddReturnProduct.cshtml" />
     <Content Include="Views\Products\AddQuotes.cshtml" />
+    <Content Include="Views\MNG\Tax.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

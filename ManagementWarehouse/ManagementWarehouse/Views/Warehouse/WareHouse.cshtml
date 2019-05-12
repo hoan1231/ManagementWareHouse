@@ -3,6 +3,7 @@
     ViewBag.Title = "WareHouse";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="~/warehouse/Js/WareHouse.js"></script>
 <div class="box box-danger">
     <div class="box-header with-border">
         <i class="ion ion-clipboard"></i>
@@ -56,7 +57,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="tblWarehouse">
                     <thead class="scroll-table">
                         <tr class="success">
                             <th>STT</th>
@@ -71,22 +72,22 @@
                             <th></th>
                         </tr>
                     </thead>
-
-                    <tr dir-paginate="x in lsCategory | itemsPerPage: 10">
-                        <td>1</td>
-                        <td>Sửa rửa mặt</td>
-                        <td>ADE_0011</td>
-                        <td style="text-align:center">11</td>
-                        <td style="text-align:center">30</td>
-                        <td style="text-align:center">4</td>
-                        <td style="text-align:center">19</td>
-                        <td style="text-align:center">19/06/2019</td>
-                        <td style="text-align:center">Kho hàng 1</td>
-                        <td>
-                            <button type="button" class="btn btn-info btn-flat" data-backdrop="false" data-toggle="modal" data-target="#modalType" ng-click="moveCategory(x)">Xem chi tiết sản phẩm</button>
-                        </td>
-                    </tr>
-
+                    <tbody id="tbdWarehouse">
+                        <tr>
+                            <td>1</td>
+                            <td>Sửa rửa mặt</td>
+                            <td>ADE_0011</td>
+                            <td style="text-align:center">11</td>
+                            <td style="text-align:center">30</td>
+                            <td style="text-align:center">4</td>
+                            <td style="text-align:center">19</td>
+                            <td style="text-align:center">19/06/2019</td>
+                            <td style="text-align:center">Kho hàng 1</td>
+                            <td>
+                                <button type="button" class="btn btn-info btn-flat modalDetail" data-backdrop="false">Xem chi tiết sản phẩm</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
                 <div id="modalType" class="modal fade">
                     <div class="modal-dialog" style="margin-top:6%;">

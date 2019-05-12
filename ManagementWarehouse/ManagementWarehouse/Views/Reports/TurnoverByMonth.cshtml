@@ -3,6 +3,85 @@
     ViewBag.Title = "TurnoverByMonth";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <i class="ion ion-clipboard"></i>
+        <h3 class="box-title">Báo cáo doanh số theo tháng</h3>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Kho hàng</label>
+                    <select id="ddl" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Sản phẩm</label>
+                    <select id="ddlProduct" style="width:100%;" class="form-control select2 input-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="">--Chọn--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label>Chọn năm </label>
+                    <input type="text" id="txtFrom" value="2019" class="form-control input-datepicker input-sm">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" style="width: 80px" id="btnSearch">Tìm kiếm</button>
+                    <button class="btn btn-warning btn-sm" style="width: 80px" id="btnExcel">Xuất excel</button>
+                </div>
+            </div>
+        </div>
 
-<h2>TurnoverByMonth</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblReport" class="table table-bordered table-hover">
+                    <thead class="scroll-table">
+                        <tr class="success">
+                            <th>Tháng 1</th>
+                            <th>Tháng 2</th>
+                            <th>Tháng 3</th>
+                            <th>Tháng 4</th>
+                            <th>Tháng 5</th>
+                            <th>Tháng 6</th>
+                            <th>Tháng 7</th>
+                            <th>Tháng 8</th>
+                            <th>Tháng 9</th>
+                            <th>Tháng 10</th>
+                            <th>Tháng 11</th>
+                            <th>Tháng 12</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbdReport">
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 

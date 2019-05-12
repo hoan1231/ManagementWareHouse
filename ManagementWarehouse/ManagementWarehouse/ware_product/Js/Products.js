@@ -4,6 +4,11 @@
      * */
     bindEventOpenAddProduct();
     /**
+     * /**
+     * Sự kiện mở popup xem chi tiết sản phẩm
+     * */
+    bindEventOpenDetailProduct();
+    /**
      * Lấy tất cả danh sách sản phẩm
      * */
     GetAllProduct();
@@ -121,15 +126,57 @@ function bindEventOpenAddProduct() {
     });
 }
 
-/**
- * Định dạng date time dd/MM/yyyy HH:mm:ss
- * @param {any} date item
- * @return {any} item dd/MM/yyyy HH:mm:ss
- */
-function formatDate(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ':' + date.getSeconds();
-    return date.getDate() + "/" + ("0" + (date.getMonth() + 1)).slice(-2) + "/" + date.getFullYear() + "  " + strTime;
+function bindEventOpenDetailProduct() {
+    $("#modalDetail").click(function (e) {
+        e.preventDefault();
+        var itemCfAddProduct = $.confirm({
+            title: '<i class="fa fa-bank text-green"></i> Chi tiết sản phẩm',
+            type: 'blue',
+            columnClass: 'x-large',
+            content: '' +
+                '<div class="row"><div class="col-ld-5 col-md-5 col-sm 12"><div class="row"> <img src="/Content/dist/img/anhdefault.png" alt="Sữa rửa mặt 1" class= "img-responsive img-thumbnail">'+
+                ' <div class="form-group" style="margin-left:3%;"><table class="table table-bordered table-hover"> <tr class="success"><th>Tên kho hàng</th><th>Số lượng kho hàng</th></tr><tr><td>Kho hàng 1</td><td>120</td></tr></table></div></div></div> <div class="col-ld-7 col-md-7 col-sm 12"><div class="row no-margin">' +
+                '<table class="table table-borderless table-striped table-right-left"><tbody>'+
+                '<tr> <td colspan="2" style="background-color:#FFF;"></td></tr>'+
+                '<tr><td style = "width:30%;"> Barcode &amp; QRcode</td > '+
+            '<td style = "width:70%;" > <img src="/Content/dist/img/code.png" alt="s001" class="bcimg">'+
+                                        '<img src="/Content/dist/img/qr_code.jpeg" class="qrimg" style="width: 18%;"></td>'+
+                                                    '</tr>'+
+                          '<tr> <td>Loại</td> <td>Tiêu chuẩn</td></tr > '+
+                          '<tr> <td>Tên</td> <td>Sữa rửa mặt 1</td></tr > '+
+                          '<tr><td>Mã</td><td>s001</td></tr>' +
+                          '<tr><td>brand</td><td></td></tr>' +
+                '<tr><td>Danh mục</td><td>Category 1</td></tr>' +  
+                '<tr><td>Nhãn hiệu</td><td>nivea</td></tr>' +  
+                '<tr><td>Đơn vị tính</td><td>Đơn vị 1 (01)</td></tr>' +  
+                '<tr><td>Giá</td><td>195000</td></tr>' + 
+                '<tr><td>Thuế suất</td><td>No Tax</td></tr>' + 
+                '<tr><td>Phương thức tính thuế</td><td>Không bao gồm</td></tr>' + 
+                '<tr><td>Số lượng nhập cảnh báo</td><td>25</td></tr>' + 
+                        '</tbody></table>' +
+                   '</div></div></div></div></div>',
+            buttons: {
+                formSubmit: {
+                    text: 'Sửa',
+                    btnClass: 'btn-blue btn-add-Product',
+                    action: function () {
+
+                        return false;
+                    }
+                },
+                cancel: function () {
+                    text: 'Đóng'
+                }
+            },
+            onContentReady: function () {
+                // bind to events
+                var jc = this;
+                this.$content.find('form').on('submit', function (e) {
+                    // if the user submits the form by pressing enter in the field.
+                    e.preventDefault();
+                    jc.$$formSubmit.trigger('click'); // reference the button and click it
+                });
+            }
+        });
+    });
 }

@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "AgentStatistics";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var fromDate = ViewData["fromDate"];
+    var toDate = ViewData["toDate"];
 }
 <div class="box box-danger">
     <div class="box-header with-border">
@@ -33,13 +35,13 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="form-group">
                     <label>Từ ngày </label>
-                    <input type="text" id="txtFrom" value="05/05/2019" class="form-control input-datepicker input-sm">
+                    <input type="text" id="txtFrom" value="@fromDate" class="form-control input-datepicker input-sm">
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="form-group">
                     <label>Đến ngày</label>
-                    <input type="text" id="txtTo" value="05/10/2019" class="form-control input-datepicker input-sm">
+                    <input type="text" id="txtTo" value="@toDate" class="form-control input-datepicker input-sm">
                 </div>
             </div>
         </div>
